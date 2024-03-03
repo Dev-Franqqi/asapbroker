@@ -8,18 +8,25 @@ import Secureimage from "../public/securetrade.png"
 import { useState } from "react"
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+// import { cookies } from "next/headers";
+import Cookies from 'js-cookie'
+import { useEffect } from "react";
+
+import Link from "next/link";
 
 
 interface AnimatedComponentProps {
   children: ReactNode;
+  className?:string;
 }
 
 
 
-const AnimatedComponent = ({ children }:AnimatedComponentProps) => {
+const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 1,
   });
 
   return (
@@ -28,6 +35,7 @@ const AnimatedComponent = ({ children }:AnimatedComponentProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1 }}
+      className={className}
     >
       {children}
     </motion.div>
@@ -37,17 +45,31 @@ const AnimatedComponent = ({ children }:AnimatedComponentProps) => {
 
 export default function App(){
   const [darkMode,setDarkMode] = useState<boolean>(false)
-   console.log(darkMode)
-   const { ref, inView } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.5, // Trigger when 50% of the element is in view
-  });
-
+  const router = useRouter()
+   
+  //  const { ref, inView } = useInView({
+  //   triggerOnce: true, // Only trigger once
+  //   threshold: 0.5, // Trigger when 50% of the element is in view
+  // });
+        const [email,setEmail] = useState<string>('');
+        const [message, setMessage] = useState<string>('');
+        useEffect(()=>{
+          const dark = Cookies.get('dark');
+          if(dark){
+            if(dark==='true'){
+              setDarkMode(true)
+            }
+          }
+          else{
+            setDarkMode(false)
+            
+          }
+        },[])
   return(
     
 
       <div className={darkMode?"dark bg-black text-white":""}>
-          <Navbar darkMode={darkMode} setdarkMode={setDarkMode}/>
+          <Navbar router={router} darkMode={darkMode} setdarkMode={setDarkMode}/>
 
           <main className="dark:bg-black">
 
@@ -83,7 +105,7 @@ export default function App(){
   className="w-64 h-64 rounded-full bg-gradient-to-r from-neutral-800 to-gray-100 dark:to-gray-500 absolute bottom-3 md:bottom-1 -left-40 z-40"></motion.div>
 </section>
 
-<section className="md:flex md:justify-between md:px-5 mt-8">
+<section className="md:flex relative  overflow-x-hidden md:justify-between md:px-5 mt-8">
 
    
 
@@ -134,15 +156,12 @@ export default function App(){
 
   </div>
   <Image src={Secureimage} className="mt-3 md:mt-0  z-50" alt=""/>
-   <motion.div
-  initial={
-    {
-      x:50
-    }
-  }
-  animate={{x:0}}
-  transition={{duration:0.7}} className="w-64 h-64 rounded-full bg-gradient-to-r from-gray-200 to-pink-200 absolute  -right-40  -z-50"></motion.div>
-
+  <motion.div
+  initial={{ x: 50 }}
+  animate={{ x: 0 }}
+  transition={{ duration: 0.7 }}
+  className="w-32 h-32 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-gray-200 to-pink-200 absolute -right-40 -bottom-40 md:-right-0 -z-50"
+></motion.div>
 
  </section>
 
@@ -178,7 +197,7 @@ export default function App(){
    
 
 </section>
-<section id="market" className="py-10 md:px-0 mt-20 text-[#8670FC]">
+<section id="market" className="py-10 px-10 mt-20 text-[#8670FC]">
               <h3 className="text-center font-bold text-2xl mb-10 md:text-3xl">
                 ACCOUNT TYPES
               </h3>
@@ -264,10 +283,44 @@ export default function App(){
 
             <section className="mt-20">
                          
-    <AnimatedComponent>
-    <h2 className="text-[2.5rem] text-center font-bold text-[#8670FC]  md:w-[22.8rem] leading-[48px] px-2 md:px-0 mb-4">
+    <AnimatedComponent className="text-center">
+    <h2 className="text-[2.5rem] text-center font-bold text-[#8670FC] mx-auto  md:w-[22.8rem] leading-[48px] px-2 md:px-0 mb-4">
     Get in Touch
       </h2>
+    </AnimatedComponent>
+    <AnimatedComponent className="text-center ">
+      <p className="text-center md:mx-auto md:text-left md:w-[42vw] mx-auto md:mt-5  md:text-xl text-gray-700 mb-20 dark:text-gray-300">For any support or inquiries ,please contact us.</p>
+    </AnimatedComponent>
+
+
+
+    <AnimatedComponent className="flex flex-col space-y-7 md:flex-row text-center md:justify-between">
+      <div className="md:w-3/6  md:mt-7" >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 mx-auto">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+</svg>
+
+        <p className="text-[#8670FC] font-semibold">Email</p>
+        <p>Send us an email and we&apos;ll respond to you immediately</p>
+        <Link href="#">
+        info@elitetradinghub.com</Link>
+
+      </div>
+      <div className="md:w-3/6 ">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 mx-auto">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+</svg>
+
+        <p className="text-[#8670FC] font-semibold">Phone</p>
+        <p>Call us</p>
+        <Link href="#">
+        
+      +3558879966</Link>
+
+      </div>
+
+
+
     </AnimatedComponent>
               
 
