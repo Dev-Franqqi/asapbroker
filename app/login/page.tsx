@@ -6,6 +6,8 @@ import Logo from "../../public/elitlogo.png"
 import Cookies from "js-cookie"
 import { useState,useEffect } from "react"
 import Image from "next/image"
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from "@/components/ui/firebase"
 import { useRouter } from "next/navigation"
 
 export default function Login(){
@@ -23,6 +25,42 @@ export default function Login(){
     const gotoHome = ()=>{
         router.push('/')
     }
+    const [email,setEmail] = useState('')
+    const [password,setPassword] = useState('')
+    const [error ,setError] = useState(false)
+    const [errmessage, setErrmessage] = useState('')
+    const [loading,setLoading] = useState(false)
+  
+    // const [error,setError] = useState(false)
+    const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
+      e.preventDefault();
+      setLoading(true)
+      if(email !== '' && password !==''){
+        signInWithEmailAndPassword(auth,email,password)
+        .then((cred)=>{
+          setLoading(false)
+          Cookies.set("User",JSON.stringify(cred.user),{ sameSite: 'Lax', expires:2 })
+          router.push('/dashboard')
+         
+  
+        })
+        .catch((error)=>{
+          setError(true)
+          setErrmessage(error.message)
+          setLoading(false)
+  
+        })
+  
+  
+      }
+    }
+   // check for cookies
+    useEffect(()=>{
+      if(Cookies.get("User")){
+          router.push('/dashboard');
+      }
+  })
+  
     useEffect(()=>{
         const dark = Cookies.get('dark');
         if(dark){
@@ -69,18 +107,18 @@ export default function Login(){
             <header>
                 <Image src={Logo} className="mx-auto" alt=""/>
             </header>
-            <h1 className="font-bold text-xl mt-3 dark:text-[#8670FC]">Sign Up Now</h1>
-            <p className="text-sm dark:text-gray-100">Fill in the details to create an account</p>
+            <h1 className="font-bold text-xl mt-3 dark:text-[#8670FC]">Log in</h1>
+            <p className="text-sm dark:text-gray-100">Fill in the details to log into your account</p>
            <form className="py-10 flex flex-col px-2 space-y-3 "
            >
 
-
+            {errmessage && <div className="text-red-600 border-red-600 rounded-md">{errmessage}</div>}
 
           
-            <Input type="email" placeholder="email" />
-            <Input type="password" placeholder="password"/>
+            <Input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="email" required/>
+            <Input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="password" required/>
             
-            <Button className="w-3/5  font-semibold mx-auto text-white bg-[#8670FC]">Submit</Button>
+            <Button type="submit" disabled={loading} className="w-3/5  font-semibold mx-auto text-white bg-[#8670FC]">Submit</Button>
             
            </form>
 

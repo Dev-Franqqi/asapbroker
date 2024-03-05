@@ -7,8 +7,11 @@ import Cookies from "js-cookie"
 import { useState,useEffect } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { addDoc } from "firebase/firestore";
+import { auth,colref } from "@/components/ui/firebase"
 
-export default function Login(){
+export default function Signup(){
     const router = useRouter()
     const [darkMode,setdarkMode] = useState(false)
     const setToDarkMode = ()=>{
@@ -22,6 +25,69 @@ export default function Login(){
 
     const gotoHome = ()=>{
         router.push('/')
+    }
+    const [firstname,setFirstName]  =useState('');
+    const [lastname,setLastname] = useState('');
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const [error ,setError] = useState(false);
+    const [phone,setPhone] = useState('');
+    const [country,setCountry] = useState('')
+    const [errmessage,setErrmessage] = useState('');
+    const [loading,setLoading] = useState(false)
+   
+
+
+
+    
+    const handleSubmit =(e: React.FormEvent<HTMLFormElement>)=>{
+        e.preventDefault();
+        setLoading(true)
+    
+        createUserWithEmailAndPassword(auth,email,password)
+        .then((cred)=>{
+        
+           
+          
+          
+    
+            addDoc(colref,{
+                firstname:firstname,
+                lastname:lastname,
+                email:email,
+                password:password,
+                amount: 0,
+               
+                uid:cred.user.uid
+            }).then(()=>{
+          Cookies.set("User",JSON.stringify(cred.user),{ sameSite: 'Lax' ,expires:2})
+
+                setEmail("");
+                setPassword("");
+
+                
+            })
+    
+            
+            setLoading(false)
+          router.push('/dashboard')
+    
+    
+            
+    
+    
+        })
+    
+        .catch(err=>{
+            
+            setError(true)
+            setErrmessage(err.message)
+            setLoading(false)
+        })
+    
+     
+      
+            
     }
     useEffect(()=>{
         const dark = Cookies.get('dark');
@@ -65,27 +131,27 @@ export default function Login(){
 }
 
         </nav>
-        <main className="mt-10 text-center">
+        <main className="mt-10 text-center dark:text-white">
             <header>
                 <Image src={Logo} className="mx-auto" alt=""/>
             </header>
             <h1 className="font-bold text-xl mt-3 dark:text-[#8670FC]">Sign Up Now</h1>
             <p className="text-sm dark:text-gray-100">Fill in the details to create an account</p>
-           <form className="py-10 flex flex-col px-2 space-y-3 "
+           <form onSubmit={handleSubmit} className="py-10 flex flex-col px-2 space-y-3 "
            >
-
+              {errmessage && <div className="text-red-600 border rounded-md border-red-600">{errmessage}</div>}
 
 
             <div className="flex gap-x-2">
-            <Input type="text" placeholder="firstname"/>
-            <Input type="text" placeholder="lastname"/>
+            <Input type="text" value={firstname} onChange={(e)=>setFirstName(e.target.value)} placeholder="firstname"/>
+            <Input type="text" value={lastname} onChange={(e)=>setLastname(e.target.value)} placeholder="lastname"/>
             </div>
-            <Input type="email" placeholder="email" />
-            <Input type="password" placeholder="password"/>
-            <Input type="text" placeholder="phone"/>
-            <Input type="password" placeholder="country" />
+            <Input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="email" />
+            <Input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="password"/>
+            <Input type="text" value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="phone"/>
+            <Input type="text" value={country} onChange={(e)=>{setCountry(e.target.value)}} placeholder="country" />
 
-            <Button className="w-3/5  font-semibold mx-auto text-white bg-[#8670FC]">Submit</Button>
+            <Button disabled={loading} type="submit" className="w-3/5  font-semibold mx-auto text-white bg-[#8670FC]">Submit</Button>
             
            </form>
 
