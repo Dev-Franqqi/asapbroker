@@ -131,7 +131,7 @@ export default function Signup(){
 }
 
         </nav>
-        <main className="mt-10 text-center dark:text-white">
+        <main className="mt-10 md:w-2/6 md:mx-auto text-center dark:text-white">
             <header>
                 <Image src={Logo} className="mx-auto" alt=""/>
             </header>
@@ -143,13 +143,13 @@ export default function Signup(){
 
 
             <div className="flex gap-x-2">
-            <Input type="text" value={firstname} onChange={(e)=>setFirstName(e.target.value)} placeholder="firstname"/>
-            <Input type="text" value={lastname} onChange={(e)=>setLastname(e.target.value)} placeholder="lastname"/>
+            <Input type="text" value={firstname} onChange={(e)=>setFirstName(e.target.value)} placeholder="Firstname" required/>
+            <Input type="text" value={lastname} onChange={(e)=>setLastname(e.target.value)} placeholder="Lastname" required/>
             </div>
-            <Input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="email" />
-            <Input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="password"/>
-            <Input type="text" value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="phone"/>
-            <Input type="text" value={country} onChange={(e)=>{setCountry(e.target.value)}} placeholder="country" />
+            <Input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="Email" required />
+            <Input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="password" required/>
+            <Input type="text" value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="Phone" required/>
+            <Input type="text" value={country} onChange={(e)=>{setCountry(e.target.value)}} placeholder="Country"required />
 
             <Button disabled={loading} type="submit" className="w-3/5  font-semibold mx-auto text-white bg-[#8670FC]">Submit</Button>
             

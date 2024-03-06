@@ -94,8 +94,8 @@ export default function Deposit(){
           <section className="dark:text-black">
             <Drawer>
               <DrawerTrigger className="w-full h-fit  active:border-red-500 focus:border-none focus:border-red-300">
-                <div onClick={()=>setShow(false)} className="flex items-center justify-between px-2 border-black border bg-gray-100 dark:border-0 dark:bg-gray-300 rounded-md  text-sm">
-                  <p className="text-sm">Via Crypto tokens</p>
+                <div onClick={()=>setShow(false)} className="flex items-center justify-between px-2 border dark:border-gray-600 text-white rounded-md  text-sm">
+                  <p className="text-sm font-medium">Via Crypto tokens</p>
                   <Image
                     loading="lazy"
                     src={Cryptoiconsimg}
@@ -104,7 +104,7 @@ export default function Deposit(){
                   />
                 </div>
               </DrawerTrigger>
-              <DrawerContent className="text-white">
+              <DrawerContent className="dark:text-white dark:bg-neutral-950 border-0 bg-white text-black ">
                 <DrawerHeader>
                   <DrawerTitle>Copy wallet address</DrawerTitle>
                   <DrawerDescription>
@@ -176,7 +176,7 @@ export default function Deposit(){
               </DrawerContent>
             </Drawer>
 
-            <div onClick={()=>{setShow(!show)}} className="flex items-center justify-between px-2 py-3 border border-black bg-gray-100 rounded-md  mt-2 text-sm dark:bg-gray-300">
+            <div onClick={()=>{setShow(!show)}} className="flex items-center justify-between px-2 py-3 border dark:border-gray-600 font-medium rounded-md  mt-2 text-sm dark:text-white">
               <p className="text-sm">Via Card </p>
               <Image src={Card} className="w-24" alt="" />
             </div>

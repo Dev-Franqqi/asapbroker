@@ -103,7 +103,7 @@ export default function Login(){
 }
 
         </nav>
-        <main className="mt-10 text-center">
+        <main className="mt-10 md:w-2/6 md:mx-auto dark:text-white text-center">
             <header>
                 <Image src={Logo} className="mx-auto" alt=""/>
             </header>
@@ -115,8 +115,8 @@ export default function Login(){
             {errmessage && <div className="text-red-600 border-red-600 rounded-md">{errmessage}</div>}
 
           
-            <Input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="email" required/>
-            <Input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="password" required/>
+            <Input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="Email" required/>
+            <Input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" required/>
             
             <Button type="submit" disabled={loading} className="w-3/5  font-semibold mx-auto text-white bg-[#8670FC]">Submit</Button>
             
