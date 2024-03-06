@@ -109,7 +109,7 @@ export default function Login(){
             </header>
             <h1 className="font-bold text-xl mt-3 dark:text-[#8670FC]">Log in</h1>
             <p className="text-sm dark:text-gray-100">Fill in the details to log into your account</p>
-           <form className="py-10 flex flex-col px-2 space-y-3 "
+           <form onSubmit={handleSubmit} className="py-10 flex flex-col px-2 space-y-3 "
            >
 
             {errmessage && <div className="text-red-600 border-red-600 rounded-md">{errmessage}</div>}

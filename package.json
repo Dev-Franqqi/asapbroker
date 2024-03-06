@@ -17,8 +17,6 @@
     "@types/chart.js": "^2.9.41",
     "@types/js-cookie": "^3.0.6",
     "@types/react-icons": "^3.0.0",
-    "chart.js": "^4.4.2",
-    "chartjs-adapter-date-fns": "^3.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "firebase": "^10.8.1",
