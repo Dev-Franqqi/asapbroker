@@ -100,7 +100,7 @@ signOut(auth).then(() => {
             setPhotoDataUrl(storedPhoto);
           }
       
-      },[user])
+      },[user,loading,router])
 
     return(
 

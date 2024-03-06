@@ -8,7 +8,6 @@ import { Avatar,AvatarFallback } from "@/components/ui/avatar"
 import Card1 from "../../public/card 1.png"
 import Flag from "../../public/US.png"
 import { FaArrowDown } from "react-icons/fa";
-import BitcoinAreaChart from "../mycomps/BitcoinAreaChart"
 import { BiMoneyWithdraw } from "react-icons/bi";
 import { FaArrowsLeftRight, FaArrowsUpDownLeftRight } from "react-icons/fa6";
 import { getDocs } from "firebase/firestore"
@@ -120,7 +119,7 @@ export default function Dashboard(){
         setLoading(false)
         }
     
-    },[user])
+    },[user,loading,router])
 
 
     return (
