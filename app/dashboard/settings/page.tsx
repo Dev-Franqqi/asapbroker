@@ -106,7 +106,7 @@ signOut(auth).then(() => {
 
         <>
 
-        {loading?<div>Loading...</div>:  <div className={darkMode?'dark bg-[#0d0f29] h-screen text-white':'text-neutral-800'}>
+        {loading?<div>Loading...</div>:  <div className={darkMode?'dark bg-[#0d0f29] h-fit pb-2 text-white':'text-neutral-800 h-fit pb-2'}>
         <nav className="pt-3 px-2 flex justify-between">
 
 
@@ -160,6 +160,12 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 
 <div className="w-full p-2 pt-3 font-medium h-14 border dark:border-gray-600 rounded-md">
     {`${user?.email}`}
+
+</div>
+<p className="mt-5 text-sm">Phone</p>
+
+<div className="w-full p-2 pt-3 font-medium h-14 border dark:border-gray-600 rounded-md">
+    {`${user?.phone}`}
 
 </div>
 <p className="mt-5 text-sm">Country</p>

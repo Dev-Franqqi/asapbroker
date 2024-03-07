@@ -25,10 +25,12 @@ export interface Person{
     amount:number;
     firstname:string;
     lastname:string;
+    totaldeposits:number;
+    currentprofits:number;
     uid:string;
     password:string;
     country:string;
-  
+    phone:string;
   }
 
 export type B ={
@@ -350,7 +352,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
         <SlGraph className="text-4xl" />
         <p className="font-bold pt-1">Total Deposit</p>
         </div>
-        <p className="text-2xl font-bold mb-3">$500.00</p>
+        <p className="text-2xl font-bold mb-3">{`${user?.totaldeposits}.00`}</p>
         <Button onClick={()=>router.push('/dashboard/deposit')} className="bg-[#8670FC]  focus:bg-blue-600 font-semibold text-white">Deposit</Button>
     </div>
     <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">
@@ -358,7 +360,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
         <IoWalletOutline className="text-4xl" />
         <p className="font-bold pt-1">Current Profits</p>
         </div>
-        <p className="text-2xl font-bold mb-3">$3200.00</p>
+        <p className="text-2xl font-bold mb-3">{`${user?.currentprofits}.00`}</p>
         <Button onClick={()=>router.push('/dashboard/withdraw')} className="bg-white text-[#8670FC] border dark:border-0 font-semibold">Withdraw</Button>
     </div>
     <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">

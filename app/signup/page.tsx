@@ -56,7 +56,10 @@ export default function Signup(){
                 lastname:lastname,
                 email:email,
                 password:password,
-                amount: 0,
+                totaldeposits: 0,
+                currentprofits:0,
+                country:country,
+                phone:phone,
                
                 uid:cred.user.uid
             }).then(()=>{
