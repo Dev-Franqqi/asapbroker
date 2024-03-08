@@ -302,8 +302,8 @@ export default function App(){
 
         <p className="text-[#8670FC] font-semibold">Email</p>
         <p>Send us an email and we&apos;ll respond to you immediately</p>
-        <Link href="#">
-        info@elitetradinghub.com</Link>
+        <Link href="mailto:info@elitetradinghub.co">info@elitetradinghub.co</Link>
+
 
       </div>
       <div className="md:w-3/6 ">
