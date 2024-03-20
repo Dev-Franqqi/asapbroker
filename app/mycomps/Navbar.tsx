@@ -1,22 +1,56 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link";
+import { motion } from "framer-motion";
 import Logo from "../../public/elitlogo.png"
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { Poppins } from "next/font/google";
 import { Button } from "@/components/ui/button";
-import { Dispatch, useState,SetStateAction } from "react";
+import { Dispatch, useState,SetStateAction,useRef } from "react";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 const poppins = Poppins({ weight:"700" ,subsets: ["latin"] });
 import Cookies from "js-cookie";
-
+import { IoClose } from "react-icons/io5";
+import useOpencontext from "./hooks/useOpencontext";
 type Props ={
     router:AppRouterInstance,
     darkMode:boolean,
     setdarkMode: Dispatch<SetStateAction<boolean>>
 }
 export default function Navbar({router,setdarkMode,darkMode}:Props){
-    
 
+    const {isOpen,setIsOpen} = useOpencontext()
+
+    
+    console.log(isOpen)
+    const toggleMenu = () => {
+      setIsOpen((prevIsOpen) => !prevIsOpen);
+    };
+    
+    
+    
+    const mobileNavVariants = {
+        initial:{
+            opacity:0,
+            left:"-100%"
+        },
+        animate:{
+            opacity:1,
+            left:0
+        }
+
+    }
+    const mobileNavCloseVariants = {
+        initial: {
+          opacity: 1,
+          left: 0,
+        },
+        animate: {
+          opacity: 0,
+          left: '-100%',
+        },
+      };
+      
     
     const setToDarkMode = ()=>{
         setdarkMode(true);
@@ -33,16 +67,46 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
         router.push('/signup')
 
     }
+  
+    
     
 
     return(
         <>
-        <nav className="px-4 py-2 flex justify-between">
-            <div className="flex mt-3 ">
-            <Image src={Logo} alt="" className="rounded-md"  />
+        <nav className="px-1 py-2 flex justify-between">
+            <div className="flex gap-x-3 w-2/3 mt-3 ">
+            <div className="z-[70]">
+            
+      <motion.div
+        className="menu-icon"
+        onClick={toggleMenu}
+        initial={{ opacity: 1, rotate: 0 }}
+        animate={{ opacity: isOpen ? 0 : 1, rotate: isOpen ? 180 : 0 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+      >
+        {isOpen ? <IoClose size={30} className="md:hidden mt-1  text-3xl text-black dark:text-white" /> : <HiOutlineMenuAlt4 className="md:hidden mt-1  text-3xl text-black dark:text-white" size={30} />}
+      </motion.div>
+      {isOpen && (
+        <motion.div
+          className="close-icon absolute top-5"
+          onClick={toggleMenu}
+          initial={{ opacity: 0, rotate: 0 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
+          <IoClose className="md:hidden mt-1  text-3xl text-black dark:text-white" size={30} />
+        </motion.div>
+      )}
+    </div>
+              
+            <div className="flex ">
+
+            
+            <Image src={Logo} alt="" className="rounded-md scale-50"  />
             <header className={`${poppins.className} mt-2`}>
                 ELITE TRADING HUB
             </header>
+            </div>
                 
             </div>
             <div className="md:w-2/5 mt-4 flex space-x-2 ">
@@ -50,7 +114,7 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
 
             <ul className="pt-2 w-3/5 md:flex space-x-9 font-medium text-sm hidden  ">
                 
-                <li className="hover:underline ">
+                <li className="hover:underline">
                     <Link href="/">About</Link>
                 </li>
                 <li className="hover:underline ">
@@ -101,6 +165,56 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
 
                 
             
-            </nav></>
+            </nav>
+            {isOpen ? (
+  <motion.aside
+    initial='initial'
+    animate='animate'
+    variants={mobileNavVariants}
+    className="w-[80%] h-[90vh] overflow-hidden absolute border bg-white dark:bg-[#322965] dark:border-0 z-[60]"
+  >
+    <ul className="text-xl pt-10 pl-10 flex flex-col space-y-10" >
+        <li>About</li>
+        <li>Education</li>
+        <li>Resource</li>
+        <li>Company</li>
+    </ul>
+    <div className="relative">
+
+    </div>
+
+    <div className="absolute bottom-4" >
+        <Button>Signup</Button>
+        <Button>View Pricing</Button>
+    </div>
+    
+  </motion.aside>
+) : (
+  <motion.aside
+    initial='initial'
+    animate='animate'
+    variants={mobileNavCloseVariants}
+    className="w-[80%] h-[90vh] overflow-hidden absolute border bg-white dark:bg-[#322965] dark:border-0 z-[60]"
+  >
+     <ul className="text-xl pt-10 pl-10 flex flex-col space-y-10" >
+        <li>About</li>
+        <li>Education</li>
+        <li>Resource</li>
+        <li>Company</li>
+    </ul>
+    <div className="relative h-full">
+
+
+    <div className="absolute bottom-10" >
+        <Button>Signup</Button>
+        <Button>View Pricing</Button>
+    </div>
+    </div>
+
+    
+  </motion.aside>
+)}
+
+            </>
     )
 }

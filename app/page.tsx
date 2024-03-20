@@ -11,9 +11,12 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 // import { cookies } from "next/headers";
 import Cookies from 'js-cookie'
+import useOpencontext from "./mycomps/hooks/useOpencontext";
+import { OpenContextProvider } from "./mycomps/Opencontextprovider";
 import { useEffect } from "react";
 
 import Link from "next/link";
+import { ServerActionDispatcher } from "next/dist/client/components/router-reducer/router-reducer-types";
 
 
 interface AnimatedComponentProps {
@@ -43,10 +46,10 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
 };
 
 
-export default function App(){
+ function App(){
   const [darkMode,setDarkMode] = useState<boolean>(false)
-  const router = useRouter()
-   
+  const router = useRouter() 
+   const {isOpen} = useOpencontext()
   //  const { ref, inView } = useInView({
   //   triggerOnce: true, // Only trigger once
   //   threshold: 0.5, // Trigger when 50% of the element is in view
@@ -58,20 +61,23 @@ export default function App(){
           if(dark){
             if(dark==='true'){
               setDarkMode(true)
+          console.log(isOpen)
+
             }
           }
           else{
             setDarkMode(false)
+          console.log(isOpen)
             
           }
         },[])
   return(
     
 
-      <div className={darkMode?"dark bg-black text-white":""}>
+      <div className={darkMode?(isOpen?"dark  overflow-hidden h-screen bg-black text-white":"dark bg-black text-white"):(isOpen?"overflow-hidden h-screen":"")}>
           <Navbar router={router} darkMode={darkMode} setdarkMode={setDarkMode}/>
 
-          <main className="dark:bg-black">
+          <main className={"dark:bg-black overflow-hidden"}>
 
 <section className="h-screen text-center md:text-left  flex flex-col md:flex-row md:items-center mt-10 justify-center md:px-10">
 
@@ -339,3 +345,14 @@ export default function App(){
 
   )
 }
+
+export default function Home(){
+  return(
+    <OpenContextProvider>
+      <App />
+    </OpenContextProvider>
+
+  )
+}
+
+
