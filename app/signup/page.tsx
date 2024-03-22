@@ -140,12 +140,12 @@ export default function Signup(){
             </header>
             <h1 className="font-bold text-xl mt-3 dark:text-[#8670FC]">Sign Up Now</h1>
             <p className="text-sm dark:text-gray-100">Fill in the details to create an account</p>
-           <form onSubmit={handleSubmit} className="py-10 flex flex-col px-2 space-y-3 "
+           <form onSubmit={handleSubmit} className="py-10 text-xl flex flex-col px-2 space-y-3 "
            >
               {errmessage && <div className="text-red-600 border rounded-md border-red-600">{errmessage}</div>}
 
 
-            <div className="flex gap-x-2">
+            <div className="flex gap-x-2 ">
             <Input type="text" value={firstname} onChange={(e)=>setFirstName(e.target.value)} placeholder="Firstname" required/>
             <Input type="text" value={lastname} onChange={(e)=>setLastname(e.target.value)} placeholder="Lastname" required/>
             </div>

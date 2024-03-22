@@ -11,6 +11,7 @@ import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.share
 const poppins = Poppins({ weight:"700" ,subsets: ["latin"] });
 import Cookies from "js-cookie";
 import { IoClose } from "react-icons/io5";
+
 import useOpencontext from "./hooks/useOpencontext";
 type Props ={
     router:AppRouterInstance,
@@ -20,7 +21,7 @@ type Props ={
 export default function Navbar({router,setdarkMode,darkMode}:Props){
 
     const {isOpen,setIsOpen} = useOpencontext()
-
+    
     
     console.log(isOpen)
     const toggleMenu = () => {
@@ -115,7 +116,7 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
             <ul className="pt-2 w-3/5 md:flex space-x-9 font-medium text-sm hidden  ">
                 
                 <li className="hover:underline">
-                    <Link href="/">About</Link>
+                    <Link href="/about">About</Link>
                 </li>
                 <li className="hover:underline ">
                 <Link href="/">Pricing</Link>
@@ -173,19 +174,22 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
     variants={mobileNavVariants}
     className="w-[80%] h-[90vh] overflow-hidden absolute border bg-white dark:bg-[#322965] dark:border-0 z-[60]"
   >
-    <ul className="text-xl pt-10 pl-10 flex flex-col space-y-10" >
-        <li>About</li>
-        <li>Education</li>
-        <li>Resource</li>
-        <li>Company</li>
+    <ul className="text-xl pt-10 pl-6 flex flex-col space-y-10" >
+        <li className="hover:text-underline hover:text-[#8670FC]"><Link href="/about">About</Link></li>
+        <li className="hover:text-underline hover:text-[#8670FC]"><Link href={'/education'}>Education</Link></li>
+        <li className="hover:text-underline hover:text-[#8670FC]">Resource</li>
+        <li className="hover:text-underline hover:text-[#8670FC]">Company</li>
     </ul>
+   
     <div className="relative">
 
     </div>
+    <div className="absolute bottom-20 px-6  text-white" >
+    <div className="flex justify-between gap-x-3 border-black">
 
-    <div className="absolute bottom-4" >
-        <Button>Signup</Button>
-        <Button>View Pricing</Button>
+        <Button onClick={()=>router.push('/signup')} className="bg-black dark:bg-white dark:text-black text-semibold text-white">Signup</Button>
+        <Button className="bg-[#8670FC] text-white text-semibold">View Pricing</Button>
+    </div>
     </div>
     
   </motion.aside>
@@ -196,20 +200,23 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
     variants={mobileNavCloseVariants}
     className="w-[80%] h-[90vh] overflow-hidden absolute border bg-white dark:bg-[#322965] dark:border-0 z-[60]"
   >
-     <ul className="text-xl pt-10 pl-10 flex flex-col space-y-10" >
-        <li>About</li>
-        <li>Education</li>
-        <li>Resource</li>
-        <li>Company</li>
+     <ul className="text-xl pt-10 pl-6 flex flex-col space-y-10" >
+        <li className="hover:text-underline hover:text-[#8670FC]">About</li>
+        <li className="hover:text-underline hover:text-[#8670FC]">Education</li>
+        <li className="hover:text-underline hover:text-[#8670FC]">Resource</li>
+        <li className="hover:text-underline hover:text-[#8670FC]">Company</li>
     </ul>
-    <div className="relative h-full">
+    
 
+    <div className="absolute bottom-20 px-6 " >
+      <div className="flex justify-between">
 
-    <div className="absolute bottom-10" >
-        <Button>Signup</Button>
-        <Button>View Pricing</Button>
+        <Button className="bg-black w-3/6 dark:bg-white dark:text-black text-semibold text-white">Signup</Button>
+        <Button className="bg-[#8670FC] w-3/6 text-white text-semibold ">View Pricing</Button>
     </div>
     </div>
+
+  
 
     
   </motion.aside>

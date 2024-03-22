@@ -9,6 +9,7 @@ import Card1 from "../../public/card 1.png"
 import Flag from "../../public/US.png"
 import { FaArrowDown } from "react-icons/fa";
 import { BiMoneyWithdraw } from "react-icons/bi";
+import TradingViewWidget from "../mycomps/Tradeview"
 import { FaArrowsLeftRight, FaArrowsUpDownLeftRight } from "react-icons/fa6";
 import { getDocs } from "firebase/firestore"
 import { query,where } from "firebase/firestore";
@@ -19,7 +20,9 @@ import { SlGraph } from "react-icons/sl";
 import { IoWalletOutline } from "react-icons/io5";
 import { LiaFileInvoiceSolid } from "react-icons/lia";
 import { FaGear } from "react-icons/fa6";
-
+import Marketview from "../mycomps/Marketview"
+import Loadingcomp from "../mycomps/Loading"
+import Miniwidget from "../mycomps/Miniwidget"
 export interface Person{
     email:string;
     amount:number;
@@ -131,10 +134,10 @@ export default function Dashboard(){
 
         <>
 
-        {loading?<div>loading...</div>:
+        {loading?<Loadingcomp />:
 
 <div className={darkMode?'dark bg-[#0d0f29] h-fit text-white':'text-neutral-800'}>
-<nav className="pt-3 px-2 flex justify-between">
+<nav className="pt-3 px-2 flex justify-between mb-5">
 
 
         <svg xmlns="http://www.w3.org/2000/svg" onClick={gotoHome} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-[#8670FC]">
@@ -164,7 +167,10 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 </svg>
 }
 </nav>
-<main className=" mt-4 p-4 flex flex-col space-y-4">
+
+
+<main className=" mt-4 p-4 flex flex-col space-y-4 ">
+
 
     <div className=" border flex justify-between h-[5rem] dark:border-gray-600 shadow-md rounded-md p-3">
 
@@ -177,7 +183,10 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 
     </div>
 
-    <div className="border dark:border-gray-600 h-[10rem] shadow-md p-4 rounded-md">
+
+    <div className="flex gap-x-1 md:w-screen">
+
+    <div className="border dark:border-gray-600 md:w-[50%] h-[10rem] shadow-md p-4  rounded-md">
         <div className="flex gap-x-2 mb-2">
         <SlGraph className="text-4xl" />
         <p className="font-bold pt-1">Total Deposit</p>
@@ -185,7 +194,8 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
         <p className="text-2xl font-bold mb-3">{`${user?.totaldeposits}.00`}</p>
         <Button onClick={()=>router.push('/dashboard/deposit')} className="bg-[#8670FC]  focus:bg-blue-600 font-semibold text-white">Deposit</Button>
     </div>
-    <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">
+
+    <div className="border dark:border-gray-600 md:w-[50%]  h-[10rem] shadow-md p-4 rounded-md">
         <div className="flex gap-x-2 mb-2">
         <IoWalletOutline className="text-4xl" />
         <p className="font-bold pt-1">Current Profits</p>
@@ -193,6 +203,16 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
         <p className="text-2xl font-bold mb-3">{`${user?.currentprofits}.00`}</p>
         <Button onClick={()=>router.push('/dashboard/withdraw')} className="bg-white text-[#8670FC] border dark:border-0 font-semibold">Withdraw</Button>
     </div>
+    </div>
+
+    <div className="md:flex ">
+
+<Miniwidget />
+<Marketview />
+</div>
+
+
+
     <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">
         <div className="flex gap-x-2 mb-2">
         <LiaFileInvoiceSolid className="text-4xl" />
@@ -205,6 +225,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
     
 
 </main>
+{/* <Marketview /> */}
 
 </div>
 

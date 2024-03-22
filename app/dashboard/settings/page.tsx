@@ -13,6 +13,7 @@ import { db } from "@/components/ui/firebase"
 import { B } from "../page"
 import { Button } from "@/components/ui/button"
 import { getAuth, signOut } from "firebase/auth";
+import Loadingcomp from "@/app/mycomps/Loading"
 export default function Settings(){
     const router = useRouter()
     const [photoDataUrl, setPhotoDataUrl] = useState<string | null>(null);
@@ -106,7 +107,7 @@ signOut(auth).then(() => {
 
         <>
 
-        {loading?<div>Loading...</div>:  <div className={darkMode?'dark bg-[#0d0f29] h-fit pb-2 text-white':'text-neutral-800 h-fit pb-2'}>
+        {loading?<Loadingcomp />:  <div className={darkMode?'dark bg-[#0d0f29] h-fit pb-2 text-white':'text-neutral-800 h-fit pb-2'}>
         <nav className="pt-3 px-2 flex justify-between">
 
 

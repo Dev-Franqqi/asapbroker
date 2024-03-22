@@ -14,7 +14,7 @@ import Cookies from 'js-cookie'
 import useOpencontext from "./mycomps/hooks/useOpencontext";
 import { OpenContextProvider } from "./mycomps/Opencontextprovider";
 import { useEffect } from "react";
-
+import TradingViewWidget from "./mycomps/Tradeview";
 import Link from "next/link";
 import { ServerActionDispatcher } from "next/dist/client/components/router-reducer/router-reducer-types";
 
@@ -61,20 +61,21 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
           if(dark){
             if(dark==='true'){
               setDarkMode(true)
-          console.log(isOpen)
+        
 
             }
           }
           else{
             setDarkMode(false)
-          console.log(isOpen)
+       
             
           }
         },[])
   return(
     
 
-      <div className={darkMode?(isOpen?"dark  overflow-hidden h-screen bg-black text-white":"dark bg-black text-white"):(isOpen?"overflow-hidden h-screen":"")}>
+      <div className={darkMode?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
+        
           <Navbar router={router} darkMode={darkMode} setdarkMode={setDarkMode}/>
 
           <main className={"dark:bg-black overflow-hidden"}>
@@ -331,6 +332,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
               
 
             </section>
+
 
 
 
