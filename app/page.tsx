@@ -29,7 +29,7 @@ interface AnimatedComponentProps {
 const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 1,
+    threshold: 0.8,
   });
 
   return (
@@ -204,13 +204,31 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
    
 
 </section>
-<section id="market" className="py-10 px-10 mt-20 text-[#8670FC]">
+<section id="pricing" className="py-10 px-5 md:px-10 mt-20 text-[#8670FC]">
               <h3 className="text-center font-bold text-2xl mb-10 md:text-3xl">
                 ACCOUNT TYPES
               </h3>
               <div className="md:flex md:gap-x-3 px-2">
 
 
+              <div className="text-center  border py-9 text-sm rounded-md mb-7   md:w-2/6 dark:border-white">
+                <p className="font-semibold">Custom</p>
+                <p className="font-bold text-2xl mb-3 ">200 $/EUR MINNIMUM</p>
+                <ul className=" mb-6 text-base text-black dark:text-[#8670FC] md:text-lg">
+                  <li className="mb-3">
+                    Trading Instruments: 36 currency pairs, metals,
+                    cryptocurrencies
+                  </li>
+                  <li className="mb-3">Spread: Floating from 1.3 pips</li>
+                  <li className="mb-3">Maximum Leverage: 1:2000</li>
+                  <li className="mb-3">Return on Investment:10%</li>
+                  <li>Deposit Bonuses: All Offers</li>
+                </ul>
+
+                <Button onClick={()=>router.push('/signup')} className="border-2 dark:bg-black dark:hover:bg-[#8670FC] dark:hover:text-white  hover:bg-[#8670FC] hover:text-white font-semibold md:mt-6 dark:text-[#8670FC]">
+                  Choose Plan
+                </Button>
+              </div>
               <div className="text-center  border py-9 text-sm rounded-md mb-7   md:w-2/6 dark:border-white">
                 <p className="font-semibold">STARTER</p>
                 <p className="font-bold text-2xl mb-3 ">1000 $/EUR</p>
@@ -225,7 +243,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
                   <li>Deposit Bonuses: All Offers</li>
                 </ul>
 
-                <Button className="border-2 dark:bg-black dark:hover:bg-[#8670FC] dark:hover:text-white  hover:bg-[#8670FC] hover:text-white font-semibold md:mt-6 dark:text-[#8670FC]">
+                <Button onClick={()=>router.push('/signup')} className="border-2 dark:bg-black dark:hover:bg-[#8670FC] dark:hover:text-white  hover:bg-[#8670FC] hover:text-white font-semibold md:mt-6 dark:text-[#8670FC]">
                   Choose Plan
                 </Button>
               </div>
@@ -243,7 +261,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
                   <li className="mb-3">Deposit Bonuses: All Offers</li>
                 </ul>
 
-                <Button className="border-2 dark:hover:bg-[#8670FC] dark:hover:text-white dark:bg-black hover:bg-[#8670FC] hover:text-white  font-semibold md:mt-6 text-[#8670FC]">
+                <Button onClick={()=>router.push('/signup')} className="border-2 dark:hover:bg-[#8670FC] dark:hover:text-white dark:bg-black hover:bg-[#8670FC] hover:text-white  font-semibold md:mt-6 text-[#8670FC]">
                   Choose Plan
                 </Button>
               </div>
@@ -262,7 +280,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
                   <li className="mb-3">Loyalty Bonuses: All Offers</li>
                 </ul>
 
-                <Button className="border-2 dark:hover:bg-[#8670FC] dark:hover:text-white hover:bg-[#8670FC] hover:text-white text-[#8670FC] dark:bg-black font-semibold">
+                <Button onClick={()=>router.push('/signup')} className="border-2 dark:hover:bg-[#8670FC] dark:hover:text-white hover:bg-[#8670FC] hover:text-white text-[#8670FC] dark:bg-black font-semibold">
                   Choose Plan
                 </Button>
               </div>
@@ -280,7 +298,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
     <AnimatedComponent>
       <p className="text-center md:text-left md:w-[42vw] md:mt-5  md:text-xl text-gray-700 mb-20 md:mb-0 dark:text-gray-300">Join our platform and start enjoying the benefits from our user friendly interface to our ease of service</p>
 
-      <Button className="border-2 dark:hover:bg-[#8670FC] dark:hover:text-white hover:bg-[#8670FC] hover:text-white text-[#8670FC] dark:bg-black font-semibold">
+      <Button onClick={()=>router.push('/signup')} className="border-2 dark:hover:bg-[#8670FC] dark:hover:text-white hover:bg-[#8670FC] hover:text-white text-[#8670FC] dark:bg-black font-semibold">
         Sign up
       </Button>
     </AnimatedComponent>
@@ -308,8 +326,19 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
 </svg>
 
         <p className="text-[#8670FC] font-semibold">Email</p>
-        <p>Send us an email and we&apos;ll respond to you immediately</p>
+        <p className="px-2">Send us an email and we&apos;ll respond to you immediately</p>
         <Link href="mailto:info@elitetradinghub.co">info@elitetradinghub.co</Link>
+
+
+      </div>
+      <div className="md:w-3/6  md:mt-7" >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 mx-auto">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+</svg>
+
+
+        <p className="text-[#8670FC] font-semibold">Live chat</p>
+        <p className="px-2">Send A message with the message icon on the bottom right hand corner and we will reply immediately</p>
 
 
       </div>
@@ -339,6 +368,36 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
 
 </main>
 
+
+<footer className="h-fit relative top-10 z-[80] text-sm md:text-base py-6 px-3 md:p-10 md:flex md:justify-between bg-[#06061a]">
+
+      <div className="mb-5 md:mb-0">
+
+      <h3 className="text-2xl font-bold text-[#8670FC]">ELITE TRADING HUB</h3>
+      <p className="md:w-2/5 text-gray-300">We want you to not only trade with global financial markets but also with a simple and user-friendly online platform.</p>
+      </div>
+
+
+      <div className="text-gray-300 mb-8 md:mb-0">
+        <h4 className="text-lg font-semibold">Useful Links</h4>
+        <ul className="">
+          <li><Link href={'/about'}>About</Link></li>
+          <li><Link href="#pricing">Pricing</Link></li>
+          <li><Link href={'/contact'}>Contact</Link></li>
+        </ul>
+      </div>
+      <div className="text-gray-300">
+        <h4 className="text-lg font-semibold">Education Docs</h4>
+        <ul>
+          <li><Link href="/education">Beginner</Link></li>
+          <li><Link href="/education/intermediate">Intermediate</Link></li>
+          <li><Link href="/education/advanced">Advanced</Link></li>
+
+        </ul>
+      </div>
+
+
+    </footer>
       
       
       </div>

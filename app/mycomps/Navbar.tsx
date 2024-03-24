@@ -113,10 +113,13 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
             <div className="md:w-2/5 mt-4 flex space-x-2 ">
 
 
-            <ul className="pt-2 w-3/5 md:flex space-x-9 font-medium text-sm hidden  ">
+            <ul className="pt-2 w-3/5 md:w-full md:flex  md:space-x-6 space-x-9 font-medium text-sm hidden  ">
                 
                 <li className="hover:underline">
                     <Link href="/about">About</Link>
+                </li>
+                <li className="hover:underline">
+                    <Link href="/education">Education</Link>
                 </li>
                 <li className="hover:underline ">
                 <Link href="/">Pricing</Link>
@@ -172,13 +175,13 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
     initial='initial'
     animate='animate'
     variants={mobileNavVariants}
-    className="w-[80%] h-[90vh] overflow-hidden absolute border bg-white dark:bg-[#322965] dark:border-0 z-[60]"
+    className="w-[80%] h-[90vh] overflow-hidden md:hidden absolute border bg-white dark:bg-[#322965] dark:border-0 z-[60]"
   >
     <ul className="text-xl pt-10 pl-6 flex flex-col space-y-10" >
         <li className="hover:text-underline hover:text-[#8670FC]"><Link href="/about">About</Link></li>
         <li className="hover:text-underline hover:text-[#8670FC]"><Link href={'/education'}>Education</Link></li>
-        <li className="hover:text-underline hover:text-[#8670FC]">Resource</li>
-        <li className="hover:text-underline hover:text-[#8670FC]">Company</li>
+        <li className="hover:text-underline hover:text-[#8670FC]"><Link href='#pricing'>Pricing</Link></li>
+        <li className="hover:text-underline hover:text-[#8670FC]"><Link href="/login">View Dashboard</Link></li>
     </ul>
    
     <div className="relative">
@@ -188,7 +191,7 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
     <div className="flex justify-between gap-x-3 border-black">
 
         <Button onClick={()=>router.push('/signup')} className="bg-black dark:bg-white dark:text-black text-semibold text-white">Signup</Button>
-        <Button className="bg-[#8670FC] text-white text-semibold">View Pricing</Button>
+        <Link href={'#pricing'} className="bg-[#8670FC] rounded-md pt-2 text-sm px-2 font-medium text-white text-semibold">View Pricing</Link>
     </div>
     </div>
     
@@ -198,13 +201,13 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
     initial='initial'
     animate='animate'
     variants={mobileNavCloseVariants}
-    className="w-[80%] h-[90vh] overflow-hidden absolute border bg-white dark:bg-[#322965] dark:border-0 z-[60]"
+    className="w-[80%] hidden h-[90vh] md:hidden overflow-hidden absolute border bg-white dark:bg-[#322965] dark:border-0 z-[60]"
   >
      <ul className="text-xl pt-10 pl-6 flex flex-col space-y-10" >
         <li className="hover:text-underline hover:text-[#8670FC]">About</li>
         <li className="hover:text-underline hover:text-[#8670FC]">Education</li>
-        <li className="hover:text-underline hover:text-[#8670FC]">Resource</li>
-        <li className="hover:text-underline hover:text-[#8670FC]">Company</li>
+        <li className="hover:text-underline hover:text-[#8670FC]">Pricing</li>
+        <li className="hover:text-underline hover:text-[#8670FC]">View Dashboard</li>
     </ul>
     
 
