@@ -2,6 +2,7 @@
 import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import Depositcomp from "@/app/mycomps/Depositcomp";
 import Cryptoiconsimg from "../../../public/cryptoicons 2.png"
 import Card from "../../../public/card 1.png"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -10,20 +11,13 @@ import Btc from "../../../public/btc.png"
 import Eth from "../../../public/eth.png"
 import Usdt from "../../../public/usdt.png"
 import { Button } from "@/components/ui/button";
-import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-  } from "@/components/ui/drawer";
+import { ChangeEvent,FormEvent } from "react";
+import { Input } from "@/components/ui/input";
+
+ 
 export default function Deposit(){
     const [darkMode,setDarkMode] = useState<boolean>(false)
-    const [show,setShow] = useState<boolean>(false)
-
+    
     const router = useRouter()
     const setToDarkMode = ()=>{
         setDarkMode(true);
@@ -34,13 +28,33 @@ export default function Deposit(){
         Cookies.set('dark','false')
     }
 
-     
+    const [screenshot, setScreenshot] = useState<File | null>(null);
+
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+        if (event.target.files && event.target.files.length > 0) {
+            const file = event.target.files[0];
+            setScreenshot(file);
+        }
+    };
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+
+      if (screenshot) {
+          // Send the screenshot to a server for processing
+          console.log('Screenshot submitted:', screenshot.name);
+          // You can also reset the form here
+          setScreenshot(null);
+      } else {
+          alert('Please select a screenshot');
+      }
+  };
     //  const { ref, inView } = useInView({
     //   triggerOnce: true, // Only trigger once
     //   threshold: 0.5, // Trigger when 50% of the element is in view
     // });
-          const [email,setEmail] = useState<string>('');
-          const [message, setMessage] = useState<string>('');
+          
+
+
           useEffect(()=>{
             const dark = Cookies.get('dark');
             if(dark){
@@ -58,7 +72,7 @@ export default function Deposit(){
 
         <>
 
-        <div className={darkMode?'dark bg-black h-screen':'screen'}>
+        <div className={darkMode?'dark bg-black pb-4 ':'pb-4'}>
         <nav className="p-3 flex justify-between">
         <svg xmlns="http://www.w3.org/2000/svg" onClick={()=>router.push('/dashboard')} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-[#8670FC]">
   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -86,127 +100,49 @@ export default function Deposit(){
 
         </nav>
 
-        <main className="pt-10 px-4 ">
-          <h1 className="text-center dark:text-white font-semibold mb-3">
+        <main className="pt-5 px-4 ">
+          <h1 className="text-center text-lg dark:text-gray-400 font-semibold mb-3">
             Select Deposit Method
           </h1>
+          <div className="dark:text-gray-400">
 
-          <section className="dark:text-black">
-            <Drawer>
-              <DrawerTrigger className="w-full h-fit  active:border-red-500 focus:border-none focus:border-red-300">
-                <div onClick={()=>setShow(false)} className="flex items-center justify-between px-2 border dark:border-gray-600 text-white rounded-md  text-sm">
-                  <p className="text-sm font-medium">Via Crypto tokens</p>
-                  <Image
-                    loading="lazy"
-                    src={Cryptoiconsimg}
-                    className="w-16"
-                    alt=""
-                  />
-                </div>
-              </DrawerTrigger>
-              <DrawerContent className="dark:text-white dark:bg-neutral-950 border-0 bg-white text-black ">
-                <DrawerHeader>
-                  <DrawerTitle>Copy wallet address</DrawerTitle>
-                  <DrawerDescription>
-                    Make payments into the defined token wallets
-                  </DrawerDescription>
+          <p>To ensure a smooth payment process, please follow these steps:</p>
+<ol className="text-sm list-decimal px-3">
+    <li>
+        <strong>Copy Crypto Address:</strong> First, copy the cryptocurrency address provided for your payment.
+    </li>
+    <li>
+        <strong>Make Payment:</strong> Use your preferred cryptocurrency wallet to send the payment to the copied address. Ensure the amount and currency match the requested payment.
+    </li>
+    <li>
+        <strong>Submit Proof of Payment:</strong> After making the payment, return to this page and upload a screenshot of the transaction as proof. Use the form below to submit the screenshot. Please ensure the screenshot is clear and includes all relevant transaction details.
+    </li>
+</ol>
+</div>
 
-                  <div className="mt-4">
-                    <div className="flex justify-between">
-                      <Image src={Btc} alt="" />
-                      <p className="">1xijdee90ejdkddfkjfsf</p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
-                        />
-                      </svg>
-                    </div>
-                    <div className="flex justify-between mt-2">
-                      <Image src={Eth} alt="" />
-                      <p className="">1xijdee90ejdkddfkjfsf</p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
-                        />
-                      </svg>
-                    </div>
-                    <div className="flex justify-between mt-3">
-                      <Image src={Usdt} alt="" />
-                      <p className="">1xijdee90ejdkddfkjfsf</p>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </DrawerHeader>
-                <DrawerFooter>
-                  <DrawerClose>
-                    <Button variant="outline">Close</Button>
-                  </DrawerClose>
-                </DrawerFooter>
-              </DrawerContent>
-            </Drawer>
+<p className="dark:text-gray-400">Thank you for your cooperation. If you encounter any issues, please contact our support team for assistance.</p>
 
-            <div onClick={()=>{setShow(!show)}} className="flex items-center justify-between px-2 py-3 border dark:border-gray-600 font-medium rounded-md  mt-2 text-sm dark:text-white">
-              <p className="text-sm">Via Card </p>
-              <Image src={Card} className="w-24" alt="" />
+
+          <section className="dark:text-black ">
+           
+        
+              <Depositcomp />
+            <div className="pb-2">
+            <h2 className="dark:text-gray-400 text-lg font-semibold mb-2">Already made payment?</h2>
+
+            <form className="dark:text-gray-400" onSubmit={handleSubmit}>
+            <label>
+                Select Screenshot:
+                <input type="file" accept="image/*" onChange={handleFileChange} />
+            </label>
+            <br />
+            <button type="submit">Submit</button>
+        </form>
             </div>
+
           </section>
         </main>
 
-        <Alert
-          variant="destructive"
-          className={show?"absolute  bottom-20 w-[98%] ml-1 dark:bg-gray-100 dark:text-red-700":"hidden"}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
-            />
-          </svg>
-
-          <AlertTitle>Error</AlertTitle>
-          <AlertDescription>
-            Method is unavailable at the moment. Try again later
-          </AlertDescription>
-        </Alert>
         </div>
         
         
