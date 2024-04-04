@@ -18,7 +18,7 @@ import TradingViewWidget from "./mycomps/Tradeview";
 import Link from "next/link";
 import { ServerActionDispatcher } from "next/dist/client/components/router-reducer/router-reducer-types";
 
-
+  
 interface AnimatedComponentProps {
   children: ReactNode;
   className?:string;

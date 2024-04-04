@@ -7,6 +7,7 @@ import Image from "next/image"
 import { Avatar,AvatarFallback } from "@/components/ui/avatar"
 import Card1 from "../../public/card 1.png"
 import Flag from "../../public/US.png"
+import {TiPencil} from "react-icons/ti"
 import { FaArrowDown } from "react-icons/fa";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import TradingViewWidget from "../mycomps/Tradeview"
@@ -137,7 +138,7 @@ export default function Dashboard(){
         {loading?<Loadingcomp />:
 
 <div className={darkMode?'dark bg-[#0d0f29] h-fit text-white':'text-neutral-800'}>
-<nav className="pt-3 px-2 flex justify-between mb-5">
+<nav className="pt-3  pb-2 px-2 flex justify-between mb-5">
 
 
         <svg xmlns="http://www.w3.org/2000/svg" onClick={gotoHome} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-[#8670FC]">
@@ -172,7 +173,8 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 <main className=" mt-4 p-4 flex flex-col space-y-4 ">
 
 
-    <div className=" border flex justify-between h-[5rem] dark:border-gray-600 shadow-md rounded-md p-3">
+    <div className=" border  dark:border-gray-600 shadow-md rounded-md p-3">
+    <div className="  flex justify-between h-[5rem] dark:border-gray-600 shadow-md rounded-md p-3">
 
         <div>
 
@@ -182,28 +184,52 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
         <FaGear onClick={()=>router.push('/dashboard/settings')} className="text-2xl"/>
 
     </div>
+    <div  className="flex space-x-2">
+
+    <p className="font-semibold pt-2">Crude Oil</p>
+    <TiPencil className=" mt-3" />
+    </div>
+    </div>
 
 
-    <div className="flex gap-x-1 md:w-screen">
+    
 
-    <div className="border dark:border-gray-600 md:w-[50%] h-[10rem] shadow-md p-4  rounded-md">
+    <div className="border dark:border-gray-600 p-2 md:w-[50%] h-[10rem] shadow-md  rounded-md">
+        
+        <div className="border shadow-2xl rounded-lg px-3 p-2 ">
+
         <div className="flex gap-x-2 mb-2">
         <SlGraph className="text-4xl" />
-        <p className="font-bold pt-1">Total Deposit</p>
+        <p className="font-bold pt-1 text-sm">Total Deposit</p>
         </div>
-        <p className="text-2xl font-bold mb-3">{`${user?.totaldeposits}.00`}</p>
-        <Button onClick={()=>router.push('/dashboard/deposit')} className="bg-[#8670FC]  focus:bg-blue-600 font-semibold text-white">Deposit</Button>
+        <p className="text-xl font-bold mb-3">{`${user?.totaldeposits}.00`}</p>
+        <Button onClick={()=>router.push('/dashboard/deposit')} className="bg-gray-200 text-[#8670FC]  focus:bg-blue-600 font-semibold ">Deposit</Button>
+   
+        </div>
     </div>
+    <div className="border dark:border-gray-600 p-2 md:w-[50%] h-[10rem] shadow-md  rounded-md">
+        
+        <div className="border shadow-2xl rounded-lg px-3 p-2 ">
 
-    <div className="border dark:border-gray-600 md:w-[50%]  h-[10rem] shadow-md p-4 rounded-md">
         <div className="flex gap-x-2 mb-2">
         <IoWalletOutline className="text-4xl" />
-        <p className="font-bold pt-1">Current Profits</p>
+        <p className="font-bold pt-1 text-sm">Current Profit</p>
         </div>
-        <p className="text-2xl font-bold mb-3">{`${user?.currentprofits}.00`}</p>
-        <Button onClick={()=>router.push('/dashboard/withdraw')} className="bg-white text-[#8670FC] border dark:border-0 font-semibold">Withdraw</Button>
+        <p className="text-xl font-bold mb-3">{`${user?.currentprofits}.00`}</p>
+        <Button onClick={()=>router.push('/dashboard/withdraw')} className="bg-gray-200 text-green-700 focus:bg-blue-600 font-semibold ">Withdraw</Button>
+   
+        </div>
     </div>
+
+    <div className="p-4 bg-sky-600 h-28 rounded-md">
+        <p className="font-bold  text-white">Pending Withdrawals</p>
+            <p className="text-bold text-white">$0.00</p>
+    
     </div>
+    <p className="text-xs text-gray-400">*pending withdrawals will appear here</p>
+
+  
+
 
     <div className="md:flex ">
 
@@ -213,14 +239,14 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 
 
 
-    <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">
+    {/* <div className="border dark:border-gray-600  h-[10rem] shadow-md p-4 rounded-md">
         <div className="flex gap-x-2 mb-2">
         <LiaFileInvoiceSolid className="text-4xl" />
         <p className="font-bold pt-1">Invoices</p>
         </div>
         
         <Button onClick={()=>router.push('/dashboard/invoice')} className="bg-white text-orange-400 border dark:border-0 font-semibold mt-4">View</Button>
-    </div>
+    </div> */}
 
     
 
