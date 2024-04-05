@@ -55,11 +55,16 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
     
     const setToDarkMode = ()=>{
         setdarkMode(true);
+       const body =  document.querySelector('body')!;
+       body.style.backgroundColor= 'black'
         Cookies.set('dark','true')
     }
     const setLightMode = ()=>{
         setdarkMode(false);
+        const body =  document.querySelector('body')!;
+       body.style.backgroundColor= 'white'
         Cookies.set('dark','false')
+
     }
     const gotoLogin = ()=>{
         router.push('/login');
@@ -104,7 +109,7 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
 
             
             <Image src={Logo} alt="" className="rounded-md scale-50"  />
-            <header className={`${poppins.className} mt-2`}>
+            <header className={`${poppins.className} mt-2 font-bold`}>
                 ELITE TRADING HUB
             </header>
             </div>

@@ -6,9 +6,11 @@ import Logo from "../../public/elitlogo.png"
 import Image from "next/image"
 import { Avatar,AvatarFallback } from "@/components/ui/avatar"
 import Card1 from "../../public/card 1.png"
-import Flag from "../../public/US.png"
+import { IoMdClose } from "react-icons/io";import Flag from "../../public/US.png"
+import Dashboardmenu from "../mycomps/Dashboardmenu"
 import {TiPencil} from "react-icons/ti"
 import { FaArrowDown } from "react-icons/fa";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import TradingViewWidget from "../mycomps/Tradeview"
 import { FaArrowsLeftRight, FaArrowsUpDownLeftRight } from "react-icons/fa6";
@@ -65,15 +67,20 @@ export type B ={
 
 export default function Dashboard(){
     const router = useRouter();
+    const [open,setOpen] = useState<boolean>(false)
     const [loading,setLoading] = useState(true)
     const [darkMode,setdarkMode] = useState(false)
     const [user,setUser] = useState<Person>()
     const setToDarkMode = ()=>{
         setdarkMode(true);
+        const body =  document.querySelector('body')!;
+       body.style.backgroundColor= '#0e112e'
         Cookies.set('dark','true')
     }
     const setLightMode = ()=>{
         setdarkMode(false);
+        const body =  document.querySelector('body')!;
+       body.style.backgroundColor= '#d9d9de'
         Cookies.set('dark','false')
     }
 
@@ -85,10 +92,16 @@ export default function Dashboard(){
         if(dark){
           if(dark==='true'){
             setdarkMode(true)
+            const body =  document.querySelector('body')!;
+       body.style.backgroundColor= '#0e112e'
+       
           }
         }
         else{
           setdarkMode(false)
+          const body =  document.querySelector('body')!;
+       body.style.backgroundColor= '#d9d9de'
+       
           
         }
 
@@ -137,16 +150,23 @@ export default function Dashboard(){
 
         {loading?<Loadingcomp />:
 
-<div className={darkMode?'dark bg-[#0d0f29] h-fit text-white':'text-neutral-800'}>
-<nav className="pt-3  pb-2 px-2 flex justify-between mb-5">
+<div className={darkMode?'dark bg-[#0d0f29] h-fit text-white':'text-neutral-800 bg-white'}>
+<nav className="pt-3 z-50 absolute w-full dark:bg-[#0e112e] bg-[#f1f1f1]  pb-2 px-3 flex justify-between ">
 
 
-        <svg xmlns="http://www.w3.org/2000/svg" onClick={gotoHome} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-[#8670FC]">
+        {/* <svg xmlns="http://www.w3.org/2000/svg" onClick={gotoHome} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-[#8670FC]">
   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-</svg>
+</svg> */}
 
-
-<Image src={Logo} alt="" />
+{open? 
+    <IoMdClose onClick={()=>setOpen(false)} />
+:
+<RxHamburgerMenu onClick={()=>setOpen(true)} className=" dark:text-white" />
+}
+<div className="flex">
+<Image src={Logo} className="relative -top-1 scale-50" alt="" />
+    <span className="font-bold">Elite Trading Hub</span>
+</div>
 
  {!darkMode &&  <svg
 onClick={setToDarkMode}
@@ -155,7 +175,7 @@ fill="none"
 viewBox="0 0 24 24"
 strokeWidth={1.5}
 stroke="currentColor"
-className="w-6 h-6 mt-1 "
+className="w-6 h-6  "
 >
 <path
 strokeLinecap="round"
@@ -163,22 +183,27 @@ strokeLinejoin="round"
 d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
 />
 </svg>}
-{darkMode && <svg xmlns="http://www.w3.org/2000/svg" onClick={setLightMode} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mt-1 text-white">
+{darkMode && <svg xmlns="http://www.w3.org/2000/svg" onClick={setLightMode} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6  text-white">
 <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
 </svg>
 }
 </nav>
 
 
-<main className=" mt-4 p-4 flex flex-col space-y-4 ">
 
 
-    <div className=" border  dark:border-gray-600 shadow-md rounded-md p-3">
+<Dashboardmenu open={open}/>
+<main className={open?'px-4  flex flex-col space-y-4 ':'mt-4 p-4 flex flex-col space-y-4'}>
+
+
+
+
+    <div className=" border mt-12  dark:border-gray-600 shadow-md rounded-md p-3">
     <div className="  flex justify-between h-[5rem] dark:border-gray-600 shadow-md rounded-md p-3">
 
         <div>
 
-        <p className="font-semibold text-base">WELCOME {`${user?.firstname.toUpperCase()} ${user?.lastname.toUpperCase()}`}</p>
+        <p className="font-semibold text-sm">WELCOME {`${user?.firstname.toUpperCase()} ${user?.lastname.toUpperCase()}`}</p>
         <p className="font-medium text-xs">Personal Account</p>
         </div>
         <FaGear onClick={()=>router.push('/dashboard/settings')} className="text-2xl"/>
@@ -186,56 +211,59 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
     </div>
     <div  className="flex space-x-2">
 
-    <p className="font-semibold pt-2">Crude Oil</p>
+    <p className="font-semibold text-sm pt-2">Crude Oil</p>
     <TiPencil className=" mt-3" />
     </div>
     </div>
 
+    <div className="md:flex  md:justify-between">
 
     
 
-    <div className="border dark:border-gray-600 p-2 md:w-[50%] h-[10rem] shadow-md  rounded-md">
+    <div className="border dark:border-gray-600 md:w-2/6 p-2  h-[10rem] shadow-md  rounded-md">
         
-        <div className="border shadow-2xl rounded-lg px-3 p-2 ">
+        <div className="border dark:border-gray-600 hover:shadow-2xl rounded-lg px-3 p-2 ">
 
         <div className="flex gap-x-2 mb-2">
         <SlGraph className="text-4xl" />
-        <p className="font-bold pt-1 text-sm">Total Deposit</p>
+        <p className="font-bold pt-1 text-xs">Total Deposit</p>
         </div>
-        <p className="text-xl font-bold mb-3">{`${user?.totaldeposits}.00`}</p>
+        <p className="text-sm font-bold mb-3">${`${user?.totaldeposits}.00`}</p>
         <Button onClick={()=>router.push('/dashboard/deposit')} className="bg-gray-200 text-[#8670FC]  focus:bg-blue-600 font-semibold ">Deposit</Button>
    
         </div>
     </div>
-    <div className="border dark:border-gray-600 p-2 md:w-[50%] h-[10rem] shadow-md  rounded-md">
+    <div className="border dark:border-gray-600 p-2 md:w-2/6  h-[10rem] shadow-md  rounded-md">
         
-        <div className="border shadow-2xl rounded-lg px-3 p-2 ">
+        <div className="border dark:border-gray-600 hover:shadow-2xl rounded-lg px-3 p-2 ">
 
         <div className="flex gap-x-2 mb-2">
         <IoWalletOutline className="text-4xl" />
-        <p className="font-bold pt-1 text-sm">Current Profit</p>
+        <p className="font-bold pt-1 text-xs">Current Profit</p>
         </div>
-        <p className="text-xl font-bold mb-3">{`${user?.currentprofits}.00`}</p>
+        <p className="text-sm font-bold mb-3">${`${user?.currentprofits}.00`}</p>
         <Button onClick={()=>router.push('/dashboard/withdraw')} className="bg-gray-200 text-green-700 focus:bg-blue-600 font-semibold ">Withdraw</Button>
    
         </div>
     </div>
+        <div className="md:w-2/6">
 
-    <div className="p-4 bg-sky-600 h-28 rounded-md">
+    <div className="p-4 bg-sky-600  border dark:border-gray-600   h-[10rem] shadow-md   rounded-md">
         <p className="font-bold  text-white">Pending Withdrawals</p>
-            <p className="text-bold text-white">$0.00</p>
+            <p className="text-bold text-white font-semibold">$0.00</p>
+
+            <Button>View</Button>
     
     </div>
     <p className="text-xs text-gray-400">*pending withdrawals will appear here</p>
+    </div>
+
+
+
 
   
 
 
-    <div className="md:flex ">
-
-<Miniwidget />
-<Marketview />
-</div>
 
 
 
@@ -248,12 +276,21 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
         <Button onClick={()=>router.push('/dashboard/invoice')} className="bg-white text-orange-400 border dark:border-0 font-semibold mt-4">View</Button>
     </div> */}
 
+</div>
     
 
 </main>
-{/* <Marketview /> */}
 
+<div className="md:flex ">
+
+<Miniwidget />
+<Marketview />
 </div>
+{/* <Marketview /> */}
+</div>
+
+
+
 
         }
         

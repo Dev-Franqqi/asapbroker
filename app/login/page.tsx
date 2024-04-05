@@ -15,10 +15,14 @@ export default function Login(){
     const [darkMode,setdarkMode] = useState(false)
     const setToDarkMode = ()=>{
         setdarkMode(true);
+        const body =  document.querySelector('body')!;
+       body.style.backgroundColor= 'black'
         Cookies.set('dark','true')
     }
     const setLightMode = ()=>{
         setdarkMode(false);
+        const body =  document.querySelector('body')!;
+       body.style.backgroundColor= 'white'
         Cookies.set('dark','false')
     }
 
@@ -66,10 +70,14 @@ export default function Login(){
         if(dark){
           if(dark==='true'){
             setdarkMode(true)
+            const body =  document.querySelector('body')!;
+       body.style.backgroundColor= 'black'
           }
         }
         else{
           setdarkMode(false)
+          const body =  document.querySelector('body')!;
+       body.style.backgroundColor= 'white'
           
         }
       },[])
