@@ -78,7 +78,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
         
           <Navbar router={router} darkMode={darkMode} setdarkMode={setDarkMode}/>
 
-          <main className={"dark:bg-black overflow-hidden"}>
+          <main className={isOpen?"blur-lg dark:bg-black overflow-hidden":"dark:bg-black overflow-hidden"}>
 
 <section className="h-screen text-center md:text-left  flex flex-col md:flex-row md:items-center mt-10 justify-center md:px-10">
 
@@ -86,7 +86,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5,delay:1 }}>
-    <h1 className="text-[2.5rem] font-bold text-[#8670FC]  md:w-[22.8rem] leading-[48px] px-2 md:px-0 mb-4">
+    <h1 className="text-[2.5rem] font-bold text-[#8670FC]  md:w-[22.8rem] leading-[48px] px-2 md:px-0 mt-6 mb-4">
       Trade Crypto and Invest with Confidence
     </h1>
     <p className="md:w-[42vw]  md:text-xl text-gray-700 mb-20 dark:text-gray-300">

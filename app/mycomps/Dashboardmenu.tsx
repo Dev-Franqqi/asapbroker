@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
+import Link from 'next/link';
 type Props = {
   open: boolean;
 };
@@ -31,15 +31,15 @@ export default function Dashboardmenu({ open }: Props) {
     >
       <h2 className="font-semibold mb-4">Personal Account</h2>
       <ul className="leading-10 pl-4">
-      <li>Homepage</li>
+      <li><Link href='/'>Homepage</Link></li>
         <hr />
-        <li>Dashboard</li>
+        <li><Link href="#">Dashboard</Link></li>
         <hr />
-        <li>Support</li>
+        <li><Link href="/dashboard/support">Support</Link></li>
         <hr />
-        <li>Deposit</li>
+        <li><Link href="/dashboard/deposit">Deposit</Link></li>
         <hr />
-        <li>Withdrawal</li>
+        <li><Link href={'/dashboard/withdraw'}>Withdrawal</Link></li>
         <hr />
        
       </ul>

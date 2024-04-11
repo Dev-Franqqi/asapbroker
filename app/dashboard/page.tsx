@@ -151,7 +151,7 @@ export default function Dashboard(){
         {loading?<Loadingcomp />:
 
 <div className={darkMode?'dark bg-[#0d0f29] h-fit text-white':'text-neutral-800 bg-white'}>
-<nav className="pt-3 z-50 absolute w-full dark:bg-[#0e112e] bg-[#f1f1f1]  pb-2 px-3 flex justify-between ">
+<nav className="pt-3 z-50 sticky -top-2 w-full dark:bg-[#0e112e] bg-white  pb-2 px-3 flex justify-between ">
 
 
         {/* <svg xmlns="http://www.w3.org/2000/svg" onClick={gotoHome} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-[#8670FC]">
@@ -165,7 +165,7 @@ export default function Dashboard(){
 }
 <div className="flex">
 <Image src={Logo} className="relative -top-1 scale-50" alt="" />
-    <span className="font-bold">Elite Trading Hub</span>
+    <span className="text-black font-extrabold dark:text-white">ELITE TRADING HUB</span>
 </div>
 
  {!darkMode &&  <svg

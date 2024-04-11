@@ -11,7 +11,7 @@ import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.share
 const poppins = Poppins({ weight:"700" ,subsets: ["latin"] });
 import Cookies from "js-cookie";
 import { IoClose } from "react-icons/io5";
-
+import Collapsiblecomp from "./Collapsiblecomp";
 import useOpencontext from "./hooks/useOpencontext";
 type Props ={
     router:AppRouterInstance,
@@ -23,7 +23,130 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
     const {isOpen,setIsOpen} = useOpencontext()
     
     
-    console.log(isOpen)
+   const cfd = [
+
+    {
+      name:'How it Works',
+      link:'/howitworks'
+    },
+    {
+      name:'How is it done',
+      link:'/howisitdone'
+    },
+    {
+      name:'CFD strategies',
+      link:'/strategies'
+    },
+    {
+      name:'Forex Trading',
+      link:'/forextrading'
+    },
+    {
+      name:'Strategies for forex',
+      link:'/strategiesforex'
+    },
+    {
+      name:'CFD Glossary',
+      link:'/cfdglossary'
+    },
+
+   ]
+   const markets = [
+
+    {
+      name:'Forex',
+      link:'/forex'
+    },
+    {
+      name:'How is it done',
+      link:'/howisitdone'
+    },
+    {
+      name:'Crude Oil',
+      link:'/crudeoil'
+    },
+    {
+      name:'Bitcoin',
+      link:'/bitcoin'
+    },
+    {
+      name:'Commodities',
+      link:'/commodities'
+    },
+    {
+      name:'Mining',
+      link:'/mining'
+    },
+    {
+      name:'Marijuana',
+      link:'/marijuana'
+    },
+    {
+      name:'Stock Indices',
+      link:'/stockindices'
+    },
+
+   ]
+   const education = [
+
+    {
+      name:'Beginner',
+      link:'/begineer'
+    },
+    {
+      name:'Intermediate',
+      link:'/intermediate'
+    },
+    {
+      name:'Advanced',
+      link:'/advanced'
+    },
+    {
+      name:'Technical Analysis',
+      link:'/technical'
+    },
+    {
+      name:'Fundamental Analysis',
+      link:'/fundamentalanalysis'
+    },
+
+   ]
+   const resources = [
+
+    {
+      name:'Premium Trader',
+      link:'/premium'
+    },
+    {
+      name:'Meta Trader 4',
+      link:'/metatrader4'
+    },
+    {
+      name:'Meta Trader 5',
+      link:'/metatrader5'
+    },
+    
+   
+
+   ]
+   const company = [
+
+    {
+      name:'About Us',
+      link:'/about'
+    },
+    {
+      name:'Contact Us',
+      link:'/contact'
+    },
+    {
+      name:'Low Trading Cost',
+      link:'/lowtradingcost'
+    },
+    
+   
+
+   ]
     const toggleMenu = () => {
       setIsOpen((prevIsOpen) => !prevIsOpen);
     };
@@ -74,6 +197,8 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
 
     }
   
+
+
     
     
 
@@ -176,29 +301,38 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
             
             </nav>
             {isOpen ? (
-  <motion.aside
+  <motion.aside 
     initial='initial'
     animate='animate'
     variants={mobileNavVariants}
-    className="w-[80%] h-[90vh] overflow-hidden md:hidden absolute border bg-white dark:bg-[#322965] dark:border-0 z-[60]"
+    className="w-[100vw] pt-20 h-[90vh] overflow-hidden md:hidden absolute     dark:bg-transparent dark:border-0 z-[60]"
   >
-    <ul className="text-xl pt-10 pl-6 flex flex-col space-y-10" >
+    {/* <ul className="text-xl text-center pt-10 mt-10 font-semibold text-gray-800 dark:text-white  flex flex-col space-y-10" >
         <li className="hover:text-underline hover:text-[#8670FC]"><Link href="/about">About</Link></li>
         <li className="hover:text-underline hover:text-[#8670FC]"><Link href={'/education'}>Education</Link></li>
         <li className="hover:text-underline hover:text-[#8670FC]"><Link href='#pricing'>Pricing</Link></li>
         <li className="hover:text-underline hover:text-[#8670FC]"><Link href="/login">View Dashboard</Link></li>
-    </ul>
-   
-    <div className="relative">
+    </ul> */}
+    <div className="">
+
+    <Collapsiblecomp title={'CFD and Forex'} menuLinks={cfd}/>
+    <Collapsiblecomp title={'Markets'} menuLinks={markets}/>
+    <Collapsiblecomp title={'Education'} menuLinks={education}/>
+    <Collapsiblecomp title={'Resources'} menuLinks={resources}/>
+    <Collapsiblecomp title={'Company'} menuLinks={company}/>
+    </div>
+
+    <Button className="bg-[#8670FC] block mt-10 text-white mx-auto w-[90%]">Sign Up</Button>
+    {/* <div className="relative">
 
     </div>
-    <div className="absolute bottom-20 px-6  text-white" >
-    <div className="flex justify-between gap-x-3 border-black">
+    <div className="absolute w-4/5 bottom-4 px-6  text-white" >
+    <div className="flex mx-auto ustify-between gap-x-3 border-black">
 
         <Button onClick={()=>router.push('/signup')} className="bg-black dark:bg-white dark:text-black text-semibold text-white">Signup</Button>
-        <Link href={'#pricing'} className="bg-[#8670FC] rounded-md pt-2 text-sm px-2 font-medium text-white text-semibold">View Pricing</Link>
+        <Link href={'#pricing'} onClick={()=>setIsOpen(false)} className="bg-[#8670FC] rounded-md pt-2 text-sm px-2 font-medium text-white text-semibold">View Pricing</Link>
     </div>
-    </div>
+    </div> */}
     
   </motion.aside>
 ) : (
@@ -215,14 +349,14 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
         <li className="hover:text-underline hover:text-[#8670FC]">View Dashboard</li>
     </ul>
     
-
-    <div className="absolute bottom-20 px-6 " >
+{/* 
+    <div className="bg-white border-4 " >
       <div className="flex justify-between">
 
         <Button className="bg-black w-3/6 dark:bg-white dark:text-black text-semibold text-white">Signup</Button>
         <Button className="bg-[#8670FC] w-3/6 text-white text-semibold ">View Pricing</Button>
     </div>
-    </div>
+    </div> */}
 
   
 
