@@ -3,6 +3,12 @@ import {motion} from "framer-motion"
 import { useInView } from "react-intersection-observer";
 import Navbar from "./mycomps/Navbar"
 import Image from "next/image"
+import { FaEuroSign } from "react-icons/fa";
+import { IoBarChartSharp } from "react-icons/io5";
+import { CiFileOn } from "react-icons/ci";
+import { IoMdWater } from "react-icons/io";
+import { FaServer } from "react-icons/fa";
+import { FaCube } from "react-icons/fa";
 import Marketimage from "../public/marketimage.png"
 import Secureimage from "../public/securetrade.png"
 import { useState } from "react"
@@ -17,7 +23,7 @@ import { useEffect } from "react";
 import TradingViewWidget from "./mycomps/Tradeview";
 import Link from "next/link";
 import { ServerActionDispatcher } from "next/dist/client/components/router-reducer/router-reducer-types";
-
+import { BsCurrencyBitcoin } from "react-icons/bs";
   
 interface AnimatedComponentProps {
   children: ReactNode;
@@ -76,7 +82,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
 
       <div className={darkMode?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
         
-          <Navbar router={router} darkMode={darkMode} setdarkMode={setDarkMode}/>
+          <Navbar darkMode={darkMode} setdarkMode={setDarkMode}/>
 
           <main className={isOpen?"blur-lg dark:bg-black overflow-hidden":"dark:bg-black overflow-hidden"}>
 
@@ -87,10 +93,10 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5,delay:1 }}>
     <h1 className="text-[2.5rem] font-bold text-[#8670FC]  md:w-[22.8rem] leading-[48px] px-2 md:px-0 mt-6 mb-4">
-      Trade Crypto and Invest with Confidence
+      Professional Trading Experience
     </h1>
     <p className="md:w-[42vw]  md:text-xl text-gray-700 mb-20 dark:text-gray-300">
-      Discover the world of cryptocurrency trading and investment with our user-friendly platform. Start today and take advantage of the opportunities in the crypto market.
+    Experience professional trading across various markets including cryptocurrencies, commodities, metals, and more. Our platform offers intuitive tools and real-time data, empowering traders to make informed decisions seamlessly. Join us to elevate your trading experience.
     </p>
   </motion.div>
 
@@ -118,7 +124,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
 
   <div>
 
-    <AnimatedComponent>
+    <AnimatedComponent >
       <p className="text-center font-semibold md:text-left">Secure</p>
     </AnimatedComponent>
 
@@ -169,6 +175,61 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
   transition={{ duration: 0.7 }}
   className="w-32 h-32 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-gray-200 to-pink-200 absolute -right-40 -bottom-40 md:-right-0 -z-50"
 ></motion.div>
+
+ </section>
+
+ <section className="px-4 mt-3 ">
+  <AnimatedComponent>
+    <h3 className="text-2xl font-semibold text-[#8670FC]">Trading Products</h3>
+      <p className="text-gray-600 dark:text-gray-200 mt-2 mb-20">We&apos;ve got a wide catalogue of investements that might interest you.</p>
+  </AnimatedComponent>
+
+  <AnimatedComponent className="flex w-full flex-wrap justify-between">
+
+    <div className="w-3/6 text-center mb-6">
+      <div>
+      <FaEuroSign className="mx-auto text-4xl text-[#8670FC] mb-1" />
+      </div>
+      <p>Forex</p>
+    </div>
+    <div className="w-3/6 text-center mb-6">
+      <div>
+      <BsCurrencyBitcoin className="mx-auto text-4xl text-[#8670FC] mb-1" />
+      </div>
+      <p>Bitcoin</p>
+    </div>
+    <div className="w-3/6 text-center mb-6">
+      <div>
+        <IoBarChartSharp className="mx-auto text-4xl text-[#8670FC] mb-1" />
+      </div>
+      <p>Indexes</p>
+    </div>
+    <div className="w-3/6 text-center mb-6">
+      <div>
+        <CiFileOn className="mx-auto text-4xl text-[#8670FC] mb-1" />
+
+      </div>
+      <p>Stocks</p>
+    </div>
+    <div className="w-3/6 text-center mb-6">
+      <div>
+    <FaServer className="mx-auto text-4xl text-[#8670FC] mb-1" />
+      </div>
+      <p>Mining</p>
+    </div>
+    <div className="w-3/6 text-center mb-6">
+      <div>
+      <IoMdWater className="mx-auto text-4xl text-[#8670FC] mb-1" />
+      </div>
+      <p>Energy</p>
+    </div>
+    <div className="w-3/6 text-center mb-6">
+      <div>
+        <FaCube className="mx-auto text-4xl text-[#8670FC] mb-1" />
+      </div>
+      <p>Commodities</p>
+    </div>
+  </AnimatedComponent>
 
  </section>
 

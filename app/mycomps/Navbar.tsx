@@ -13,29 +13,29 @@ import Cookies from "js-cookie";
 import { IoClose } from "react-icons/io5";
 import Collapsiblecomp from "./Collapsiblecomp";
 import useOpencontext from "./hooks/useOpencontext";
+import { useRouter } from "next/navigation";
 type Props ={
-    router:AppRouterInstance,
     darkMode:boolean,
     setdarkMode: Dispatch<SetStateAction<boolean>>
 }
-export default function Navbar({router,setdarkMode,darkMode}:Props){
+export default function Navbar({setdarkMode,darkMode}:Props){
 
     const {isOpen,setIsOpen} = useOpencontext()
-    
+    const router = useRouter()
     
    const cfd = [
 
     {
       name:'How it Works',
-      link:'/howitworks'
+      link:'/cfd_trading'
     },
     {
       name:'How is it done',
-      link:'/howisitdone'
+      link:'/how_it_is_done'
     },
     {
       name:'CFD strategies',
-      link:'/strategies'
+      link:'/strategiesforforex'
     },
     {
       name:'Forex Trading',
@@ -91,15 +91,15 @@ export default function Navbar({router,setdarkMode,darkMode}:Props){
 
     {
       name:'Beginner',
-      link:'/begineer'
+      link:'/education'
     },
     {
       name:'Intermediate',
-      link:'/intermediate'
+      link:'/education/intermediate'
     },
     {
       name:'Advanced',
-      link:'/advanced'
+      link:'/education/advanced'
     },
     {
       name:'Technical Analysis',
