@@ -8,6 +8,15 @@ import { Poppins } from "next/font/google";
 import { Button } from "@/components/ui/button";
 import { Dispatch, useState,SetStateAction,useRef } from "react";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 const poppins = Poppins({ weight:"700" ,subsets: ["latin"] });
 import Cookies from "js-cookie";
 import { IoClose } from "react-icons/io5";
@@ -57,13 +66,10 @@ export default function Navbar({setdarkMode,darkMode}:Props){
       name:'Forex',
       link:'/forex'
     },
-    {
-      name:'How is it done',
-      link:'/howisitdone'
-    },
+    
     {
       name:'Crude Oil',
-      link:'/crudeoil'
+      link:'/crude_oil'
     },
     {
       name:'Bitcoin',
@@ -240,23 +246,71 @@ export default function Navbar({setdarkMode,darkMode}:Props){
             </div>
                 
             </div>
-            <div className="md:w-2/5 mt-4 flex space-x-2 ">
+            <div className="md:w-3/5 mt-4 flex space-x-2 ">
 
 
-            <ul className="pt-2 w-3/5 md:w-full md:flex  md:space-x-6 space-x-9 font-medium text-sm hidden  ">
-                
-                <li className="hover:underline">
-                    <Link href="/about">About</Link>
+            <ul className="pt-2 w-3/5 md:w-full  md:flex  md:space-x-6 space-x-9 font-medium text-sm hidden  ">
+                <li>
+                <DropdownMenu >
+  <DropdownMenuTrigger>CFD</DropdownMenuTrigger>
+  <DropdownMenuContent className="bg-gray-200">
+    
+    {cfd.map((item,index)=>(
+        <DropdownMenuItem key={index}><Link href={item.link}>{item.name}</Link></DropdownMenuItem>
+    ))}
+    
+  </DropdownMenuContent>
+</DropdownMenu>
+
                 </li>
                 <li className="hover:underline">
-                    <Link href="/education">Education</Link>
+                <DropdownMenu >
+  <DropdownMenuTrigger>Markets</DropdownMenuTrigger>
+  <DropdownMenuContent className="bg-gray-200">
+    
+    {markets.map((item,index)=>(
+        <DropdownMenuItem key={index}><Link href={item.link}>{item.name}</Link></DropdownMenuItem>
+    ))}
+    
+  </DropdownMenuContent>
+</DropdownMenu>
+                </li>
+                <li className="hover:underline">
+                <DropdownMenu >
+  <DropdownMenuTrigger>Education</DropdownMenuTrigger>
+  <DropdownMenuContent className="bg-gray-200">
+    
+    {education.map((item,index)=>(
+        <DropdownMenuItem key={index}><Link href={item.link}>{item.name}</Link></DropdownMenuItem>
+    ))}
+    
+  </DropdownMenuContent>
+</DropdownMenu>
                 </li>
                 <li className="hover:underline ">
-                <Link href="/">Pricing</Link>
+                <DropdownMenu >
+  <DropdownMenuTrigger>Resources</DropdownMenuTrigger>
+  <DropdownMenuContent className="bg-gray-200">
+    
+    {resources.map((item,index)=>(
+        <DropdownMenuItem key={index}><Link href={item.link}>{item.name}</Link></DropdownMenuItem>
+    ))}
+    
+  </DropdownMenuContent>
+</DropdownMenu>
 
                 </li>
                     <li className="hover:underline ">
-                    <Link href="/">Contact</Link>
+                    <DropdownMenu >
+  <DropdownMenuTrigger>Company</DropdownMenuTrigger>
+  <DropdownMenuContent className="bg-gray-200">
+    
+    {resources.map((item,index)=>(
+        <DropdownMenuItem key={index}><Link href={item.link}>{item.name}</Link></DropdownMenuItem>
+    ))}
+    
+  </DropdownMenuContent>
+</DropdownMenu>
 
 
                     </li>

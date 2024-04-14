@@ -4,13 +4,20 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Logo from "../../public/elitlogo.png"
 import Cookies from "js-cookie"
-import { useState,useEffect } from "react"
+import { useState,useEffect, FormEventHandler, FormEvent } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { addDoc } from "firebase/firestore";
 import { auth,colref } from "@/components/ui/firebase"
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 export default function Signup(){
     const router = useRouter()
     const [darkMode,setdarkMode] = useState(false)
@@ -22,7 +29,15 @@ export default function Signup(){
         setdarkMode(false);
         Cookies.set('dark','false')
     }
-
+   
+    const handleSelectChange = (e: FormEvent<HTMLSelectElement>) => {
+      // Cast e.target to HTMLSelectElement
+      const target = e.target as HTMLSelectElement;
+      
+      // Now TypeScript knows that target.value exists
+      setInvestment(target.value);
+      console.log(investment);
+    };
     const gotoHome = ()=>{
         router.push('/')
     }
@@ -32,13 +47,17 @@ export default function Signup(){
     const [password,setPassword] = useState('');
     const [error ,setError] = useState(false);
     const [phone,setPhone] = useState('');
+    const [investment,setInvestment] = useState('');
     const [country,setCountry] = useState('')
     const [errmessage,setErrmessage] = useState('');
     const [loading,setLoading] = useState(false)
    
 
 
+const handleclick = ()=>{
 
+  console.log('working')
+}
     
     const handleSubmit =(e: React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
@@ -60,6 +79,7 @@ export default function Signup(){
                 currentprofits:0,
                 country:country,
                 phone:phone,
+                investment:investment,
                
                 uid:cred.user.uid
             }).then(()=>{
@@ -103,7 +123,9 @@ export default function Signup(){
           setdarkMode(false)
           
         }
-      },[])
+
+        console.log(investment)
+      },[investment])
 
     return(
 
@@ -153,6 +175,19 @@ export default function Signup(){
             <Input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="password" required/>
             <Input type="text" value={phone} onChange={(e)=>setPhone(e.target.value)} placeholder="Phone" required/>
             <Input type="text" value={country} onChange={(e)=>{setCountry(e.target.value)}} placeholder="Country"required />
+            <Select onValueChange={(e)=>setInvestment(e)}>
+      <SelectTrigger>
+        <SelectValue placeholder="Select Investment" />
+      </SelectTrigger>
+      <SelectContent className="bg-neutral-700 text-white">
+        <SelectItem  value="crude oil">Crude Oil</SelectItem>
+        <SelectItem  value="cryptocurrencies">Crypto Currencies</SelectItem>
+        <SelectItem  value="stocks">Stocks</SelectItem>
+        <SelectItem  value="forex">Forex</SelectItem>
+        <SelectItem  value="cryptocurrency mining">Cryptocurrency Mining</SelectItem>
+        <SelectItem  value="marijuana">Marijuana</SelectItem>
+      </SelectContent>
+    </Select>
 
             <Button disabled={loading} type="submit" className="w-3/5  font-semibold mx-auto text-white bg-[#8670FC]">Submit</Button>
             

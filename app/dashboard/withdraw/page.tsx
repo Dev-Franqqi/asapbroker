@@ -85,7 +85,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 }
 </nav>
 
-<main className="py-20 px-5">
+<main className="py-20 px-5 dark:text-gray-200 md:w-3/6 md:mx-auto md:text-center">
     <h1 className="text-2xl font-bold mb-6">WITHDRAWALS</h1>
                 <p className="text-sm">Input in Amount in USD to be withdrawn and your crypto wallet address</p>
         <form className="flex flex-col mt-6 space-y-4">
@@ -103,7 +103,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 
             <Input className="h-16" value={address} onChange={(e)=>setAddress(e.target.value)} type="text"placeholder="Wallet address" />
             <AlertDialog >
-  <AlertDialogTrigger className="bg-[#8670FC] p-3 rounded-md text-white font-semibold">Submit</AlertDialogTrigger>
+  <AlertDialogTrigger className="bg-[#8670FC] p-3 rounded-md md:w-2/5 md:block md:mx-auto text-white font-semibold">Submit</AlertDialogTrigger>
   <AlertDialogContent className="text-white bg-black border-0 w-[90%] rounded-md">
     <AlertDialogHeader>
       <AlertDialogTitle></AlertDialogTitle>

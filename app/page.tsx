@@ -78,10 +78,11 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
           }
         },[])
   return(
+
+    
     
 
       <div className={darkMode?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
-        
           <Navbar darkMode={darkMode} setdarkMode={setDarkMode}/>
 
           <main className={isOpen?"blur-lg dark:bg-black overflow-hidden":"dark:bg-black overflow-hidden"}>

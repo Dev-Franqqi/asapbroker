@@ -22,10 +22,12 @@ import { Button } from "@/components/ui/button"
 import { SlGraph } from "react-icons/sl";
 import { IoWalletOutline } from "react-icons/io5";
 import { LiaFileInvoiceSolid } from "react-icons/lia";
+import { IoClose } from "react-icons/io5";
 import { FaGear } from "react-icons/fa6";
 import Marketview from "../mycomps/Marketview"
 import Loadingcomp from "../mycomps/Loading"
 import Miniwidget from "../mycomps/Miniwidget"
+import Changeinvestment from "../mycomps/Changeinvestment"
 export interface Person{
     email:string;
     amount:number;
@@ -33,6 +35,7 @@ export interface Person{
     lastname:string;
     totaldeposits:number;
     currentprofits:number;
+    investment?:string;
     uid:string;
     password:string;
     country:string;
@@ -71,6 +74,8 @@ export default function Dashboard(){
     const [loading,setLoading] = useState(true)
     const [darkMode,setdarkMode] = useState(false)
     const [user,setUser] = useState<Person>()
+    const [closeBox,setCloseBox] = useState(false)
+    const [cookieuid,setCookieuid] = useState('')
     const setToDarkMode = ()=>{
         setdarkMode(true);
         const body =  document.querySelector('body')!;
@@ -108,6 +113,8 @@ export default function Dashboard(){
         const userCookie = Cookies.get('User');
         if(userCookie){
             const cookieValue:B  = JSON.parse(userCookie)
+            setCookieuid(cookieValue.uid)
+
             const q = query(
                 collection(db,"UserInfo"),
                 where("uid","==",`${cookieValue.uid}`)
@@ -118,6 +125,7 @@ export default function Dashboard(){
             else{
                 
                 getDocs(q).then(snapshot=>{
+
                     setUser(snapshot.docs[0].data() as Person)
                     getDocs(q).then(snapshot=>{
                         setUser(snapshot.docs[0].data() as Person)
@@ -196,11 +204,17 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 <main className={open?'px-4  flex flex-col space-y-4 ':'mt-4 p-4 flex flex-col space-y-4'}>
 
 
+<div className={closeBox?'hidden':"border rounded-md py-3 text-sm pl-2 flex justify-between"}>
 
+
+<p className="text-gray-400 ">Experiencing errors? send a mail to support@elitetradinghub.co</p>
+<IoClose className={"mt-3  text-right relative -left-3 text-xl"} onClick={()=>setCloseBox(true)} />
+
+
+</div>
 
     <div className=" border mt-12  dark:border-gray-600 shadow-md rounded-md p-3">
     <div className="  flex justify-between h-[5rem] dark:border-gray-600 shadow-md rounded-md p-3">
-
         <div>
 
         <p className="font-semibold text-sm">WELCOME {`${user?.firstname.toUpperCase()} ${user?.lastname.toUpperCase()}`}</p>
@@ -209,11 +223,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
         <FaGear onClick={()=>router.push('/dashboard/settings')} className="text-2xl"/>
 
     </div>
-    <div  className="flex space-x-2">
-
-    <p className="font-semibold text-sm pt-2">Crude Oil</p>
-    <TiPencil className=" mt-3" />
-    </div>
+   <Changeinvestment cookieuid={cookieuid} investment={user?.investment} darkMode={darkMode} />
     </div>
 
     <div className="md:flex  md:justify-between">
@@ -226,7 +236,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 
         <div className="flex gap-x-2 mb-2">
         <SlGraph className="text-4xl" />
-        <p className="font-bold pt-1 text-xs">Total Deposit</p>
+        <p className="font-bold pt-2 text-xs">Total Deposit</p>
         </div>
         <p className="text-sm font-bold mb-3">${`${user?.totaldeposits}.00`}</p>
         <Button onClick={()=>router.push('/dashboard/deposit')} className="bg-gray-200 text-[#8670FC]  focus:bg-blue-600 font-semibold ">Deposit</Button>
@@ -239,7 +249,7 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
 
         <div className="flex gap-x-2 mb-2">
         <IoWalletOutline className="text-4xl" />
-        <p className="font-bold pt-1 text-xs">Current Profit</p>
+        <p className="font-bold pt-2 text-xs">Current Profit</p>
         </div>
         <p className="text-sm font-bold mb-3">${`${user?.currentprofits}.00`}</p>
         <Button onClick={()=>router.push('/dashboard/withdraw')} className="bg-gray-200 text-green-700 focus:bg-blue-600 font-semibold ">Withdraw</Button>
@@ -248,11 +258,11 @@ d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.
     </div>
         <div className="md:w-2/6">
 
-    <div className="p-4 bg-sky-600  border dark:border-gray-600   h-[10rem] shadow-md   rounded-md">
+    <div className="p-4 bg-sky-600  border mt-2 dark:border-gray-600   h-[10rem] shadow-md   rounded-md">
         <p className="font-bold  text-white">Pending Withdrawals</p>
             <p className="text-bold text-white font-semibold">$0.00</p>
 
-            <Button>View</Button>
+            <Button className="bg-white mt-2">View</Button>
     
     </div>
     <p className="text-xs text-gray-400">*pending withdrawals will appear here</p>

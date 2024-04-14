@@ -83,7 +83,7 @@ export default function Deposit(){
 
 <div className='flex'>
 <Image src={Elitelogo} className='scale-75' alt='' />
-<p className='font-extrabold mt-1 text-black'>ELITE TRADING HUB</p>
+<p className='font-extrabold mt-1 text-black dark:text-white'>ELITE TRADING HUB</p>
 
 </div>
 
@@ -110,9 +110,9 @@ export default function Deposit(){
 
         </nav>
 
-        <main className="pt-5 px-8 mb-3 bg-white dark:bg-black">
+        <main className="pt-5 px-8 mb-3 bg-white dark:text-gray-200 dark:bg-black">
 
-          <h2 className='text-center mb-10 mt-9'>Deposit</h2>
+          <h2 className='text-center mb-10 mt-9 dark:text-gray-200'>Deposit</h2>
         
 
         <ol className='list-decimal'>
