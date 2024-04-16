@@ -53,13 +53,13 @@ export default function Depositcomp(){
 
     useEffect(()=>{
         if(coin==='BTC'){
-          setWalletDetails('1cc9w38803891cee')
+          setWalletDetails('1JyKXySKAuBnP86VnRbDbjZWfWbuuiVwzA')
         }
         if(coin==='ETH'){
-          setWalletDetails('1c03891ewueh13ee')
+          setWalletDetails('0xcfc430707dc5ce442f9257b3c33844de29b5e7a0')
         }
         if(coin==='USDT'){
-          setWalletDetails('1cc39393891cee')
+          setWalletDetails('0xcfc430707dc5ce442f9257b3c33844de29b5e7a0')
         }
     },[coin])
 

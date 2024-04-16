@@ -35,7 +35,7 @@ export default function Dashboardmenu({ open }: Props) {
         <hr />
         <li><Link href="#">Dashboard</Link></li>
         <hr />
-        <li><Link href="/dashboard/support">Support</Link></li>
+        <li><Link href="#">Support</Link></li>
         <hr />
         <li><Link href="/dashboard/deposit">Deposit</Link></li>
         <hr />
