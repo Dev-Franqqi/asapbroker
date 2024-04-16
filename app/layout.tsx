@@ -16,9 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script src="//code.tidio.co/cnxwxi4dj6anrldkxsxiqpoqtiiouj8m.js" async></script>
+      <script src="//code.tidio.co/2p8xztwcpzlaiirgh0ujroghjx24uba7.js" async></script>     {/* <script src="//code.tidio.co/cnxwxi4dj6anrldkxsxiqpoqtiiouj8m.js" async></script> */}
       <body className={inter.className}>
         {children}
+        
+{/* <script src={'./mycomps/TawktoScript.js'} type="text/javascript">
+
+</script> */}
+
        </body>
     </html>
   );
