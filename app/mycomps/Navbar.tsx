@@ -292,7 +292,7 @@ export default function Navbar({setdarkMode,darkMode}:Props){
   <DropdownMenuTrigger>Resources</DropdownMenuTrigger>
   <DropdownMenuContent className="bg-gray-200">
     
-    {company.map((item,index)=>(
+    {resources.map((item,index)=>(
         <DropdownMenuItem key={index}><Link href={item.link}>{item.name}</Link></DropdownMenuItem>
     ))}
     
@@ -305,7 +305,7 @@ export default function Navbar({setdarkMode,darkMode}:Props){
   <DropdownMenuTrigger>Company</DropdownMenuTrigger>
   <DropdownMenuContent className="bg-gray-200">
     
-    {resources.map((item,index)=>(
+    {company.map((item,index)=>(
         <DropdownMenuItem key={index}><Link href={item.link}>{item.name}</Link></DropdownMenuItem>
     ))}
     
