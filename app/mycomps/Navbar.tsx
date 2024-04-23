@@ -116,11 +116,11 @@ export default function Navbar({setdarkMode,darkMode}:Props){
     },
     {
       name:'Technical Analysis',
-      link:'/technical'
+      link:'/education/technical'
     },
     {
       name:'Fundamental Analysis',
-      link:'/fundamentalanalysis'
+      link:'/education/fundamental'
     },
 
    ]
@@ -136,7 +136,7 @@ export default function Navbar({setdarkMode,darkMode}:Props){
     },
     {
       name:'Meta Trader 5',
-      link:'/metatrader5'
+      link:'/resources/meta_trader_5'
     },
     
    
