@@ -9,6 +9,13 @@ import { Button } from "@/components/ui/button";
 import { Dispatch, useState,SetStateAction,useRef } from "react";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -121,11 +128,11 @@ export default function Navbar({setdarkMode,darkMode}:Props){
 
     {
       name:'Premium Trader',
-      link:'/premium'
+      link:'/resources/premium_trader'
     },
     {
       name:'Meta Trader 4',
-      link:'/metatrader4'
+      link:'/resources/meta_trader_4'
     },
     {
       name:'Meta Trader 5',
@@ -369,11 +376,72 @@ export default function Navbar({setdarkMode,darkMode}:Props){
     </ul> */}
     <div className="">
 
-    <Collapsiblecomp title={'CFD and Forex'} menuLinks={cfd}/>
-    <Collapsiblecomp title={'Markets'} menuLinks={markets}/>
-    <Collapsiblecomp title={'Education'} menuLinks={education}/>
-    <Collapsiblecomp title={'Resources'} menuLinks={resources}/>
-    <Collapsiblecomp title={'Company'} menuLinks={company}/>
+    <Accordion type="single" className="w-[70%] mx-auto" collapsible >
+                  
+                
+  
+                  <AccordionItem value='item-1'>
+                      <AccordionTrigger className="text-xl font-semibold focus:no-underline">CFD</AccordionTrigger>
+                      
+                        {cfd.map((item,index)=>(
+                          <AccordionContent key={index} className="text-base">
+                          <Link href={item.link} key={index}>
+                          <span className="text-black dark:text-white">{item.name}</span>
+                          </Link>
+                      </AccordionContent>
+
+                        ))}
+                    </AccordionItem>
+    
+                  <AccordionItem value='item-2'>
+                      <AccordionTrigger className="text-xl font-semibold focus:no-underline">Markets</AccordionTrigger>
+                      
+                        {markets.map((item,index)=>(
+                          <AccordionContent key={index} className="text-base">
+                          <Link href={item.link} key={index}>
+                          <span className="text-black dark:text-white">{item.name}</span>
+                          </Link>
+                          </AccordionContent>
+                        ))}
+                      
+                    </AccordionItem>
+                  <AccordionItem value='item-3'>
+                      <AccordionTrigger className="text-xl font-semibold focus:no-underline">Education</AccordionTrigger>
+                      
+                        {education.map((item,index)=>(
+                          <AccordionContent key={index} className="text-base">
+                          <Link href={item.link} key={index}>
+                          <span className="text-black dark:text-white">{item.name}</span>
+                          </Link>
+                          </AccordionContent>
+                        ))}
+                     
+                    </AccordionItem>
+                  <AccordionItem value='item-4'>
+                      <AccordionTrigger className="text-xl font-semibold focus:no-underline">Resources</AccordionTrigger>
+                        {resources.map((item,index)=>(
+                      <AccordionContent key={index} className="text-base">
+
+                          <Link href={item.link} key={index}>
+                          <span className="text-black dark:text-white">{item.name}</span>
+                          </Link>
+                      </AccordionContent>
+
+                        ))}
+                    </AccordionItem>
+                  <AccordionItem value='item-5'>
+                      <AccordionTrigger className="text-xl font-semibold focus:no-underline">Company</AccordionTrigger>
+                        {company.map((item,index)=>(
+                      <AccordionContent key={index} className="text-base">
+
+                          <Link href={item.link} key={index}>
+                          <span className="text-black dark:text-white">{item.name}</span>
+                          </Link>
+                      </AccordionContent>
+
+                        ))}
+                    </AccordionItem>
+  </Accordion>
     </div>
 
     <Button className="bg-[#8670FC] block mt-10 text-white mx-auto w-[90%]">Sign Up</Button>

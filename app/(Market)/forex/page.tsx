@@ -51,7 +51,7 @@ export default function Forex(){
                 </p>
 
                 <p className="mb-4">
-                KryptNub offers 10 of the most popular forex pairs as limited-risk binary options and spreads. You can trade them 24 hours a day, 5 days a week.
+                Elite Trading Hub offers 10 of the most popular forex pairs as limited-risk binary options and spreads. You can trade them 24 hours a day, 5 days a week.
 
                 </p>
 

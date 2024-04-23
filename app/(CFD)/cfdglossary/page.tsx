@@ -54,7 +54,7 @@ export default function Strategiesforforex(){
 
                         <p className="mb-3">Margin:</p>
                         <p className="mb-3">
-                        When trading CFDs on leverage, you must maintain a certain level of funds in your account (the necessary margin), also known as a good faith deposit. Calculating and understanding your necessary margin requirements beforehand allows you to apply good risk management and avoid any unnecessary margin calls resulting in the closing of a position due to not enough margin in your account. The margin of KryptNub CFDs will be the invested amount you select prior to opening the position.
+                        When trading CFDs on leverage, you must maintain a certain level of funds in your account (the necessary margin), also known as a good faith deposit. Calculating and understanding your necessary margin requirements beforehand allows you to apply good risk management and avoid any unnecessary margin calls resulting in the closing of a position due to not enough margin in your account. The margin of Elite Trading Hub&apos;s CFDs will be the invested amount you select prior to opening the position.
                         </p>
                     </div>
 

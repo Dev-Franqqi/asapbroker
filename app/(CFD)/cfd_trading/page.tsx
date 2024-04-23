@@ -40,7 +40,7 @@ export default function CFDtrading(){
                 <main className="px-5 py-5">
 
 
-                    <h1 className="text-3xl font-semibold mb-4">What is CFD TRading</h1>
+                    <h1 className="text-4xl font-semibold mb-4">What is CFD Trading</h1>
 
                     <p className="mb-2">
                         CFD trading is the activity of trading contracts for difference with a broker. CFDs (Contract for difference) are derivative products in which you can trade on the difference between a certain asset&apos;s set starting value and its closing value. By using a contract for difference, which is basically just a contract between a buyer and seller that specifies a certain purchase price and allows for profits or losses based on the change in the price of the underlying asset during a specified time frame, a trader can participate in a financial market with a smaller initial investment.

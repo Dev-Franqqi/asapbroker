@@ -40,7 +40,7 @@ export default function Howisitdone(){
                 <h1 className="text-3xl font-semibold mb-5">How is it done?</h1>
 
                 <p>
-                We at KryptNub have created a user friendly platform that makes CFD trading accessible and convenient:
+                We at Elite Trading Hub have created a user friendly platform that makes CFD trading accessible and convenient:
                 </p>
 
                 <p className="mt-2 text-lg">
