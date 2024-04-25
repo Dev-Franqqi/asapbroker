@@ -51,7 +51,7 @@ export default function Navbar({setdarkMode,darkMode}:Props){
     },
     {
       name:'CFD strategies',
-      link:'/strategiesforforex'
+      link:'/cfd_strategies'
     },
     {
       name:'Forex Trading',
@@ -59,7 +59,7 @@ export default function Navbar({setdarkMode,darkMode}:Props){
     },
     {
       name:'Strategies for forex',
-      link:'/strategiesforex'
+      link:'/strategiesforforex'
     },
     {
       name:'CFD Glossary',
