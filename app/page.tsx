@@ -159,7 +159,7 @@ const AnimatedComponent = ({ children ,className}:AnimatedComponentProps) => {
       </AnimatedComponent>
       <AnimatedComponent>
        <p className="md:w-[231px] text-base">
-       Our intuitive platform makes it easy for beginners and experienced traders to navigate and execute trades
+       Our very intuitive platform makes it easy for beginners and experienced traders to navigate and execute trades
        </p>
       </AnimatedComponent>
     </div>
