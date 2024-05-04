@@ -193,7 +193,7 @@ Total Payouts
     </section>
 
       <section className="px-4 py-10 bg-white">
-        <h3 className="text-3xl font-semibold mb-4">Why Widget Scale is a trusted Crypto & Stocks Trading broker </h3>
+        <h3 className="text-3xl font-semibold mb-4">Why Elite Trading Hub is a trusted Crypto & Stocks Trading broker </h3>
         <p className="text-lg">
         While existing solutions offer to solve just one problem at a time, our team is up to build a secure, useful, & easy-to-use platform.
         </p>
