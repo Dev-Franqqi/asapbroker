@@ -62,7 +62,7 @@ export default function Home(){
       <h2 className="text-4xl text-blue-950 font-semibold ">Putting our investors first is Key</h2>
       <p className=" mt-3 font-medium text-xl text-gray-500">We are committed to providing all our investors with exceptional service while offering our team the best training.</p>
       <p className="mt-4 font-medium mx-0 text-gray-800 ">
-      Widget Scale is an International online broker that has been actively operating in the Crypto & Stocks Trading trading markets. With our advanced, web-based trading platform, you can trade on the largest lists of assets in the industry. From Currency pairs, and Commodities to stocks and indices, we have it all. Keep your trading costs down with competitive spreads, commissions and low margins. View spreads on our most popular cash instruments.
+      Elite Trading Hub is an International online broker that has been actively operating in the Crypto & Stocks Trading trading markets. With our advanced, web-based trading platform, you can trade on the largest lists of assets in the industry. From Currency pairs, and Commodities to stocks and indices, we have it all. Keep your trading costs down with competitive spreads, commissions and low margins. View spreads on our most popular cash instruments.
       </p>
 
 ``
