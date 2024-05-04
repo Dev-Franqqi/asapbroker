@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Opencontextprovider } from "./mycomps/contexts/Opencontext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,10 @@ export default function RootLayout({
       {/* <script src="//code.tidio.co/2p8xztwcpzlaiirgh0ujroghjx24uba7.js" async></script>      */}
       {/* <script src="//code.tidio.co/cnxwxi4dj6anrldkxsxiqpoqtiiouj8m.js" async></script> */}
       <body className={inter.className}>
+        <Opencontextprovider>
         {children}
+        </Opencontextprovider>
+
         
 {/* <script src={'./mycomps/TawktoScript.js'} type="text/javascript">
 
