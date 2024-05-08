@@ -1,3 +1,4 @@
+'use client'
 import Navbar from "./mycomps/Navbar"
 import Image from "next/image";
 import Switchingcomp from "./mycomps/Switchingcomp"
@@ -17,11 +18,15 @@ import Profit2 from '../public/in-profit-icon-2.svg'
 import Profit3 from '../public/in-profit-icon-3.svg'
 import Profit4 from '../public/in-profit-icon-4.svg'
 import Profit5 from '../public/in-profit-icon-5.svg'
+import useOpen from "./mycomps/hooks/useOpen";
 export default function Home(){
+  const {open} = useOpen()
   return(
 
     <>
     <Navbar />
+    <div className={open?'blur-lg':''}>
+
     <Switchingcomp />
     <section className="py-12 px-4 ">
       <h2 className="text-2xl text-blue-950 font-semibold mb-5">Trading products</h2>
@@ -486,6 +491,7 @@ Total Payouts
           <p className="text-gray-300">Elite Trading Hub 2024 All rights reserved</p>
         </footer>
     
+        </div>
     
     </>
   )
