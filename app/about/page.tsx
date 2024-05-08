@@ -12,6 +12,7 @@ export default function About(){
            
 
 <main className="text-base px-2 pt-10">
+    <h1 className="text-center text-2xl mb-5 font-bold">About us</h1>
 <p>
 Elite Trading Hub is one of the leading platforms in Switzerland offering Crude Oil Trading, Forex and spreads. Regulated by the CFTC and based in New York, with member funds held in segregated accounts in major US banks, Elite Trading Hub offers secure and innovative ways to participate in the markets.
     </p>
