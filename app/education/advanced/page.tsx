@@ -36,7 +36,7 @@ export default function Intermediate(){
     return(
         <>
 
-        <div className={darkMode?' px-2 dark bg-black md:h-screen text-gray-300':' px-2 md:h-screen'}>
+        <div className='p-2'>
             <nav className="flex justify-between">
 
 

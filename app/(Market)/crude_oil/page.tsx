@@ -6,9 +6,7 @@ import Navbar from "@/app/mycomps/Navbar"
 import Cookies from "js-cookie"
 import Elitelogo from "../../../public/elitlogo.png"
 import Image from "next/image"
-import useOpencontext from "@/app/mycomps/hooks/useOpencontext"
-import { useRouter } from "next/navigation";
-import Resourcenav from "@/app/mycomps/Resourcenav";
+
 import Crude_jpeg from "../../../public/crude.jpg"
 import Crude_1 from "../../../public/1.jpg"
 import Crude_2 from "../../../public/2.jpg"
@@ -19,29 +17,12 @@ import Crude_8 from "../../../public/8.jpg"
 import Crude_9 from "../../../public/9.jpg"
 import Link from "next/link";
 export default function Crude(){
-    const [darkMode,setDarkMode] = useState<boolean>(false)
-    const {isOpen} = useOpencontext()
-    useEffect(()=>{
-        const dark = Cookies.get('dark');
-        if(dark){
-          if(dark==='true'){
-            setDarkMode(true)
-      
-
-          }
-        }
-        else{
-          setDarkMode(false)
-     
-          
-        }
-      },[])
+  
     
 
     return(
 
-        <div className={darkMode?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
-            <Resourcenav />
+        <div>
         
 
       

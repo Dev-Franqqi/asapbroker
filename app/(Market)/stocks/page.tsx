@@ -18,33 +18,14 @@ import Germany from "../../../public/germany.jpg"
 import Japan from "../../../public/japanflag.jpg"
 import Elitelogo from "../../../public/elitlogo.png"
 import Image from "next/image"
-import useOpencontext from "@/app/mycomps/hooks/useOpencontext"
-import { useRouter } from "next/navigation";
-import Resourcenav from "@/app/mycomps/Resourcenav";
-export default function Stocks(){
-    const [darkMode,setDarkMode] = useState<boolean>(false)
-    const {isOpen} = useOpencontext()
-    useEffect(()=>{
-        const dark = Cookies.get('dark');
-        if(dark){
-          if(dark==='true'){
-            setDarkMode(true)
-      
 
-          }
-        }
-        else{
-          setDarkMode(false)
-     
-          
-        }
-      },[])
+export default function Stocks(){
+   
     
 
     return(
 
-        <div className={darkMode?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
-            <Resourcenav />
+        <div>
       
 
        <main className="p-5">

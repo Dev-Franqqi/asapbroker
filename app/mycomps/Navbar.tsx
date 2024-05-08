@@ -368,7 +368,7 @@ export default function Navbar(){
     </ul> */}
     <div className="">
 
-    <Accordion type="single" className="w-[70%] mx-auto" collapsible >
+    <Accordion  type="single" className="w-[70%] mx-auto" collapsible >
                   
                 
   
@@ -376,8 +376,8 @@ export default function Navbar(){
                       <AccordionTrigger className="text-xl font-semibold focus:no-underline">CFD</AccordionTrigger>
                       
                         {cfd.map((item,index)=>(
-                          <AccordionContent key={index} className="text-base">
-                          <Link href={item.link} key={index}>
+                          <AccordionContent onClick={()=>setOpen(false)} key={index} className="text-base">
+                          <Link href={item.link}  key={index}>
                           <span className="text-black dark:text-white">{item.name}</span>
                           </Link>
                       </AccordionContent>
@@ -389,7 +389,7 @@ export default function Navbar(){
                       <AccordionTrigger className="text-xl font-semibold focus:no-underline">Markets</AccordionTrigger>
                       
                         {markets.map((item,index)=>(
-                          <AccordionContent key={index} className="text-base">
+                          <AccordionContent onClick={()=>setOpen(false)} key={index} className="text-base">
                           <Link href={item.link} key={index}>
                           <span className="text-black dark:text-white">{item.name}</span>
                           </Link>
@@ -401,7 +401,7 @@ export default function Navbar(){
                       <AccordionTrigger className="text-xl font-semibold focus:no-underline">Education</AccordionTrigger>
                       
                         {education.map((item,index)=>(
-                          <AccordionContent key={index} className="text-base">
+                          <AccordionContent onClick={()=>setOpen(false)} key={index} className="text-base">
                           <Link href={item.link} key={index}>
                           <span className="text-black dark:text-white">{item.name}</span>
                           </Link>
@@ -412,7 +412,7 @@ export default function Navbar(){
                   <AccordionItem value='item-4'>
                       <AccordionTrigger className="text-xl font-semibold focus:no-underline">Resources</AccordionTrigger>
                         {resources.map((item,index)=>(
-                      <AccordionContent key={index} className="text-base">
+                      <AccordionContent onClick={()=>setOpen(false)} key={index} className="text-base">
 
                           <Link href={item.link} key={index}>
                           <span className="text-black dark:text-white">{item.name}</span>
@@ -424,7 +424,7 @@ export default function Navbar(){
                   <AccordionItem value='item-5'>
                       <AccordionTrigger className="text-xl font-semibold focus:no-underline">Company</AccordionTrigger>
                         {company.map((item,index)=>(
-                      <AccordionContent key={index} className="text-base">
+                      <AccordionContent onClick={()=>setOpen(false)} key={index} className="text-base">
 
                           <Link href={item.link} key={index}>
                           <span className="text-black dark:text-white">{item.name}</span>

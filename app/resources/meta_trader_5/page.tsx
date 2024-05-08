@@ -1,30 +1,13 @@
 'use client'
 import { useState ,useEffect} from "react"
 import Cookies from "js-cookie"
-import useOpencontext from "@/app/mycomps/hooks/useOpencontext"
 
 import Image from "next/image"
 import Mt5 from "../../../public/mt5.jpg"
 import Link from "next/link"
 export default function Metatrader5(){
-         const [darkMode,setDarkMode] = useState<boolean>(false)
-    const {isOpen} = useOpencontext()
-    useEffect(()=>{
-        const dark = Cookies.get('dark');
-        if(dark){
-          if(dark==='true'){
-            setDarkMode(true)
       
-
-          }
-        }
-        else{
-          setDarkMode(false)
-     
-          
-        }
-      },[])
-    return(<main className={darkMode?'p-5 bg-black text-white':'p-5'}>
+    return(<main className={'p-5'}>
     <h1 className="text-3xl font-bold mb-4">MetaTrader5</h1>
     <p className="mb-4">
     Successful trading on financial markets begins with a comfortable and multi-functional trading platform. MetaTrader 5 is the best choice for the modern trader! MetaTrader 5 is an institutional multi-asset platform offering outstanding trading possibilities and technical analysis tools, as well as enabling the use of automated trading systems (trading robots) and copy trading. MetaTrader 5 is an all-in-one platform for trading Forex, Stocks and Futures. MetaTrader 5 allows you to enjoy the freedom of movement to the full extent — you can stay active while trading from smartphones and tablets. The Web Platform provides even more possibilities and allows you to work from any web browser and any device. By choosing the most convenient way from a variety of options, you can trade 24 hours a day!

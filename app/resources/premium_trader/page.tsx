@@ -1,27 +1,11 @@
 'use client'
 import { useState ,useEffect} from "react"
 import Cookies from "js-cookie"
-import useOpencontext from "@/app/mycomps/hooks/useOpencontext"
-export default function Premiumtrader(){
-    const [darkMode,setDarkMode] = useState<boolean>(false)
-    const {isOpen} = useOpencontext()
-    useEffect(()=>{
-        const dark = Cookies.get('dark');
-        if(dark){
-          if(dark==='true'){
-            setDarkMode(true)
-      
 
-          }
-        }
-        else{
-          setDarkMode(false)
-     
-          
-        }
-      },[])
+export default function Premiumtrader(){
+    
     return(
-        <main  className={darkMode?'text-white bg-black dark p-5':'p-5'}>
+        <main className="p-5">
         
         
         <h1 className="text-3xl font-bold mb-3">The Premium Trading Platform</h1>

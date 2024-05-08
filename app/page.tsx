@@ -1,5 +1,4 @@
 'use client'
-import Navbar from "./mycomps/Navbar"
 import Image from "next/image";
 import Switchingcomp from "./mycomps/Switchingcomp"
 import { FaEuroSign } from "react-icons/fa";
@@ -24,7 +23,7 @@ export default function Home(){
   return(
 
     <>
-    <Navbar />
+  
     <div className={open?'blur-lg':''}>
 
     <Switchingcomp />

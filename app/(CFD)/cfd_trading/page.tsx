@@ -1,38 +1,12 @@
 'use client'
-import { FaAngleLeft } from "react-icons/fa6";
-import { useEffect } from "react"
-import { useState } from "react"
-import Navbar from "@/app/mycomps/Navbar"
-import Cookies from "js-cookie"
-import Elitelogo from "../../../public/elitlogo.png"
-import Image from "next/image"
-import useOpencontext from "@/app/mycomps/hooks/useOpencontext"
-import { useRouter } from "next/navigation";
-import Resourcenav from "@/app/mycomps/Resourcenav";
-export default function CFDtrading(){
-    const [darkMode,setDarkMode] = useState<boolean>(false)
-    const {isOpen} = useOpencontext()
-    useEffect(()=>{
-        const dark = Cookies.get('dark');
-        if(dark){
-          if(dark==='true'){
-            setDarkMode(true)
-      
 
-          }
-        }
-        else{
-          setDarkMode(false)
-     
-          
-        }
-      },[])
-    
+export default function CFDtrading(){
+ 
 
     return(
 
-        <div className={darkMode?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
-            <Resourcenav />
+        <div>
+            
         
 
             {/* <Navbar darkMode={darkMode} setdarkMode={setDarkMode}  /> */}

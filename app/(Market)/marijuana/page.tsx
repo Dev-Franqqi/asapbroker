@@ -11,33 +11,14 @@ import Marijuana2 from "../../../public/marijuana2.jpg"
 import Cann from "../../../public/cann.jpg"
 import Elitelogo from "../../../public/elitlogo.png"
 import Image from "next/image"
-import useOpencontext from "@/app/mycomps/hooks/useOpencontext"
-import { useRouter } from "next/navigation";
-import Resourcenav from "@/app/mycomps/Resourcenav";
-export default function Marijuana(){
-    const [darkMode,setDarkMode] = useState<boolean>(false)
-    const {isOpen} = useOpencontext()
-    useEffect(()=>{
-        const dark = Cookies.get('dark');
-        if(dark){
-          if(dark==='true'){
-            setDarkMode(true)
-      
 
-          }
-        }
-        else{
-          setDarkMode(false)
-     
-          
-        }
-      },[])
+export default function Marijuana(){
+   
     
 
     return(
 
-        <div className={darkMode?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
-            <Resourcenav />
+        <div>
         <main className="p-5">
 
         <h1 className="text-3xl font-bold mb-5">

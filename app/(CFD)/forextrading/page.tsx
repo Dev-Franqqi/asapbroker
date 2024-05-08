@@ -6,33 +6,15 @@ import Navbar from "@/app/mycomps/Navbar"
 import Cookies from "js-cookie"
 import Elitelogo from "../../../public/elitlogo.png"
 import Image from "next/image"
-import useOpencontext from "@/app/mycomps/hooks/useOpencontext"
-import { useRouter } from "next/navigation";
-import Resourcenav from "@/app/mycomps/Resourcenav";
-export default function Forextrading(){
-    const [darkMode,setDarkMode] = useState<boolean>(false)
-    const {isOpen} = useOpencontext()
-    useEffect(()=>{
-        const dark = Cookies.get('dark');
-        if(dark){
-          if(dark==='true'){
-            setDarkMode(true)
-      
 
-          }
-        }
-        else{
-          setDarkMode(false)
-     
-          
-        }
-      },[])
+export default function Forextrading(){
+   
     
 
     return(
 
-        <div className={darkMode?(isOpen?"dark  overflow-hidden relative h-screen bg-black  text-white":"dark bg-black relative text-white"):(isOpen?"overflow-hidden h-screen relative":"")}>
-            <Resourcenav />
+        <div>
+           
         
 
       

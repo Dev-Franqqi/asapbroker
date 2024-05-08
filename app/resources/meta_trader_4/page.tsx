@@ -1,30 +1,13 @@
 'use client'
 import { useState ,useEffect} from "react"
 import Cookies from "js-cookie"
-import useOpencontext from "@/app/mycomps/hooks/useOpencontext"
 
 import Image from "next/image"
 import Mt4 from "../../../public/mt4.jpg"
 import Link from "next/link"
 export default function Metatrader4(){
-         const [darkMode,setDarkMode] = useState<boolean>(false)
-    const {isOpen} = useOpencontext()
-    useEffect(()=>{
-        const dark = Cookies.get('dark');
-        if(dark){
-          if(dark==='true'){
-            setDarkMode(true)
-      
 
-          }
-        }
-        else{
-          setDarkMode(false)
-     
-          
-        }
-      },[])
-    return(<main className={darkMode?'p-5 bg-black text-white':'p-5'}>
+    return(<main className={'p-5'}>
     <h1 className="text-3xl font-bold mb-4">MetaTrader4</h1>
     <p className="mb-2">
     MetaTrader 4 is a platform for trading Forex, analyzing financial markets and using Expert Advisors. Mobile trading, Trading Signals and the Market are the integral parts of MetaTrader 4 that enhance your Forex trading experience. Millions of traders with a wide range of needs choose MetaTrader 4 to trade in the market. The platform offers ample of opportunities to traders of all skill levels: advanced technical analysis, flexible trading system, algorithmic trading and Expert Advisors, as well as mobile trading applications. Signals and Market additional services extend MetaTrader 4 frontiers. The Signals service allows you to copy trades of other traders, while the Market provides you with various Expert Advisors and Technical indicators that you can buy.
