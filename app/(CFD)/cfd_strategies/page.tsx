@@ -20,40 +20,48 @@ export default function Howisitdone(){
         
 
       
-                <main className="px-5 py-5">
-                <h1 className="text-3xl font-semibold mb-5">Strategies of CFDs</h1>
+            <main className="p-6">
+    <section className="mb-3">
+        <h1 className="text-4xl bg-black text-white rounded-md p-2 font-bold mb-4">CFD Trading Strategies</h1>
+        <p>Welcome to Elite Trading Hub&apos;s guide on CFD trading strategies. In this section, we&apos;ll explore various trading strategies that you can use to make informed trading decisions and enhance your trading experience.</p>
+    </section>
 
-                <p>
-                When you get started trading CFDs there are a few basic strategies you want to follow to make the most of your trading experience. It&apos;s true that trading the markets can be complicated and will seem incredibly difficult at first, but by following three strategies you can soon get up to speed and hopefully improve your trading success.
-                </p>
+    <section className="mb-3">
+        <h2 className=" font-bold mb-2">1. Trend Following Strategy</h2>
+        <p>The trend following strategy involves identifying and following the prevailing trend in the market. Traders using this strategy aim to profit from the continuation of the trend until it shows signs of reversal.</p>
+    </section>
 
-                <p className="mt-4">
-                These three simple strategies are below:
+    <section className="mb-3">
+        <h2 className=" font-bold mb-2">2. Range Trading Strategy</h2>
+        <p>The range trading strategy involves identifying price ranges in which an asset is trading and entering positions at the top or bottom of the range. Traders using this strategy aim to profit from the price movements within the range.</p>
+    </section>
 
-                </p>
+    <section className="mb-3">
+        <h2 className=" font-bold mb-2">3. Breakout Trading Strategy</h2>
+        <p>The breakout trading strategy involves entering a trade when the price of an asset breaks out of a predefined range. Traders using this strategy aim to profit from the continuation of the breakout movement.</p>
+    </section>
 
-                <ol className="list-decimal px-4 mt-3">
+    <section className="mb-3">
+        <h2 className=" font-bold mb-2">4. Scalping Strategy</h2>
+        <p>The scalping strategy involves making multiple trades throughout the day to profit from small price movements. Traders using this strategy aim to take advantage of short-term opportunities in the market.</p>
+    </section>
 
-                    <li className="mb-4">
-                    Focus on a small number of markets. With so many different markets available to trade with CFDs you might be tempted to try them all. This often process to be a recipe for disaster. Instead put your focus on no more than three markets initially and you&apos;ll be able to improve more quickly. If you focus on a small number of markets you will have time to research each of the markets in depth each day. You&apos;ll be able to place small trades in at least one and perhaps all each day as well. And with each passing day and each new trade you&apos;ll learn more about what makes that market tick. You&apos;ll see what the normal volumes are, you&apos;ll find out if the market moves more at certain times of the day, and you&apos;ll learn which economic reports are likely to move the markets. This is the best strategy if you want to become an expert in any given market.
-                    </li>
+    <section className="mb-3">
+        <h2 className=" font-bold mb-2">5. News Trading Strategy</h2>
+        <p>The news trading strategy involves trading based on news events and economic data releases. Traders using this strategy aim to capitalize on the market volatility that often follows such events.</p>
+    </section>
 
-                    <li className="mb-4">
-                    Decide what timeframe is best for you. Some traders love the excitement that comes from trading very short time frames, but others can&apos;t stand the stress of making split second decisions, and prefer to trade longer time frames. Decide when you begin trading if you&apos;ll be a long term trader who focuses on weekly and monthly time frames, or a short term trader who focuses on daily, or even moves that can occur in minutes. By utilizing this strategy you&apos;ll be a more relaxed trader and a more confident trader as you follow your own personality traits rather than trying to fight your natural tendencies.
-                    </li>
+    <section className="mb-3">
+        <h2 className="text-2xl font-bold mb-2">Risk Management</h2>
+        <p>Regardless of the trading strategy you choose, it&apos;s important to manage your risk exposure effectively. Use tools like stop-loss orders and limit orders to protect your capital and minimize losses.</p>
+    </section>
 
-                    <li className="mb-4">
-                        Have a trading plan. It&apos;s critically important that you don&apos;t just jump into the markets without a plan. Before placing any trade you should have already completed your daily research and know whether you want to go long or short, why you&apos;re planning on going long or short, where you&apos;ll enter and exit your trade, and how much capital you&apos;ll risk on each trade. By having all of this decided in advance you can avoid putting your capital at greater risk than you&apos;re willing to accept. You are also more likely to avoid mistakes that many traders make when they trade without a plan, most notably those related to greed and fear.
-                    </li>
+    <section className="mb-3">
+        <h2 className="text-2xl font-bold mb-2">Conclusion</h2>
+        <p>CFD trading offers a variety of strategies that you can use to profit from the financial markets. Each strategy has its own advantages and risks, so it&apos;s important to choose one that aligns with your trading goals and risk tolerance. Elite Trading Hub is committed to providing you with the tools and resources you need to succeed in your trading journey. Start exploring CFD trading strategies with Elite Trading Hub today and take your trading to the next level.</p>
+    </section>
+</main>
 
-                    <p className="mt-4">
-                    These three basic strategies are not only enough to get you started in trading CFDs, they will also serve you well for your entire trading career. Always keep them in mind and if you stray from them focus on getting back to the basic strategies.
-                    </p>
-
-                </ol>
-
-             
-                </main>
         </div>
     )
 }

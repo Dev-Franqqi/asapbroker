@@ -5,6 +5,7 @@ import { Opencontextprovider } from "./mycomps/contexts/Opencontext";
 import Navbar from "./mycomps/Navbar";
 import Wrapblur from "./mycomps/Wrapblur";
 const inter = Inter({ subsets: ["latin"] });
+import Footer from "./mycomps/Footer";
 
 export const metadata: Metadata = {
   title: "Elite Trading Hub", 
@@ -27,7 +28,7 @@ export default function RootLayout({
           
         <Wrapblur>
         {children}
-
+          <Footer />
         </Wrapblur>
         
 
