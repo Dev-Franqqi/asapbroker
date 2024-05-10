@@ -18,6 +18,55 @@ export default function Intermediate(){
 <main className="p-2">
 
       <h1 className="text-center font-bold mb-7">Intermediate</h1> 
+      <div>
+      <h1 className="text-3xl font-semibold mb-2">Intermediate Trading Strategies</h1>
+      <p>Welcome to our Intermediate Trading Strategies guide. In this section, we&apos;ll explore some more advanced trading strategies and concepts to help you take your trading to the next level.</p>
+      
+      <h2>Technical Analysis</h2>
+      <p>Technical analysis is the study of past market data, primarily price and volume, to forecast future price movements. Common tools used in technical analysis include charts, trendlines, and indicators.</p>
+      
+      <h2 className="font-medium">Common Trading Strategies</h2>
+      <p>1. <strong>Breakout Trading</strong>: This strategy involves trading a security as it moves beyond a defined support or resistance level, with the expectation that the momentum will continue.</p>
+      <p>2. <strong>Trend Following</strong>: Traders using this strategy attempt to profit from an asset&apos;s momentum in a particular direction.</p>
+      <p>3. <strong>Range Trading</strong>: This strategy involves identifying overbought and oversold conditions in a market and trading within a range.</p>
+      <p>4. <strong>Swing Trading</strong>: Traders using this strategy seek to capture short- to medium-term gains in a stock (or any financial instrument) over a period of a few days to several weeks.</p>
+      
+      <h2>Risk Management</h2>
+      <p>Effective risk management is crucial for successful trading. Some key risk management techniques include:</p>
+      <ul>
+        <li>Setting stop-loss orders to limit potential losses.</li>
+        <li>Diversifying your portfolio to spread risk.</li>
+        <li>Using leverage cautiously and understanding its risks.</li>
+      </ul>
+      
+      <h2>Continued Learning</h2>
+      <p>Trading is a dynamic field, and there&apos;s always more to learn. Consider reading books, attending webinars, and networking with other traders to expand your knowledge and stay updated with market trends.</p>
+      
+      <h2>Psychology of Trading</h2>
+      <p>Trading psychology plays a significant role in a trader&apos;s success. It&apos;s important to manage emotions such as fear and greed, and to stick to your trading plan even during periods of market volatility.</p>
+      
+      <h2>Advanced Trading Tools</h2>
+      <p>1. <strong>Algorithmic Trading</strong>: Using algorithms to execute trades automatically based on predefined criteria.</p>
+      <p>2. <strong>Options Trading</strong>: Trading options contracts, which give the holder the right, but not the obligation, to buy or sell an asset at a predetermined price within a specified timeframe.</p>
+      <p>3. <strong>Derivatives Trading</strong>: Trading financial instruments whose value is derived from an underlying asset.</p>
+      
+      <h2>Position Sizing and Money Management</h2>
+      <p>Managing the size of your positions and your overall capital is essential for long-term success in trading. Proper position sizing and money management techniques help control risk and maximize potential returns.</p>
+      
+      <h2>Technical Indicators</h2>
+      <p>1. <strong>Relative Strength Index (RSI)</strong>: Measures the speed and change of price movements.</p>
+      <p>2. <strong>Moving Averages</strong>: Smooth out price data to identify trends over time.</p>
+      <p>3. <strong>Bollinger Bands</strong>: Volatility bands placed above and below a moving average.</p>
+      
+      <h2>Trading Platforms</h2>
+      <p>Choose a reliable trading platform that offers advanced charting tools, real-time data, and order execution capabilities to implement your trading strategies effectively.</p>
+      
+      <h2>Backtesting and Strategy Development</h2>
+      <p>Before risking real capital, backtest your trading strategies using historical data to evaluate their performance under various market conditions. Refine and optimize your strategies based on the results.</p>
+      
+      <h2>Conclusion</h2>
+      <p>By mastering intermediate trading strategies and concepts, you can enhance your trading skills and potentially improve your trading results. Remember, trading involves risk, and it&apos;s important to approach it with caution and a solid understanding of the markets.</p>
+    </div>
 
       <h2 className="text-4xl font-semibold mb-5">How to Develop a Trading Plan</h2> 
       <p className="mb-8">

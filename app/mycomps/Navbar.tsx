@@ -238,7 +238,7 @@ export default function Navbar(){
         animate={{ opacity: open ? 0 : 1, rotate: open ? 180 : 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
       >
-        {open ? <IoClose size={30} className="md:hidden mt-1  text-3xl text-black dark:text-white" /> : <HiOutlineMenuAlt4 className="md:hidden mt-1  text-3xl text-black dark:text-white" size={30} />}
+        {open ? <IoClose size={30} className="md:hidden mt-1  text-3xl text-blue-950 dark:text-white" /> : <HiOutlineMenuAlt4 className="md:hidden mt-1  text-3xl text-black dark:text-white" size={30} />}
       </motion.div>
       {open && (
         <motion.div
@@ -248,7 +248,7 @@ export default function Navbar(){
           animate={{ opacity: 1, rotate: 0 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
-          <IoClose className="md:hidden mt-1  text-3xl text-black dark:text-white" size={30} />
+          <IoClose className="md:hidden mt-1  text-3xl text-blue-950 dark:text-white" size={30} />
         </motion.div>
       )}
     </div>
@@ -257,7 +257,7 @@ export default function Navbar(){
 
             
             <Image src={Logo} alt="" className="rounded-md scale-50"  />
-            <header className={`${poppins.className} mt-2 font-bold`}>
+            <header className={`${poppins.className} mt-2 font-bold text-blue-950`}>
                 ELITE TRADING HUB
             </header>
             </div>

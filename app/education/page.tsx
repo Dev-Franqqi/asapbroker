@@ -13,33 +13,42 @@ export default function Education(){
     return(
         <>
 
-        <div className={' px-2 md:h-screen'}>
-          
+        <div className={'mt-5 px-2 md:h-screen'}>
+       
+    <div>
+      <h1 className="text-2xl font-bold mb-4 mt-2 uppercase px-4">Beginner&apos;s Guide to Trading</h1>
+      <p className="px-4">Welcome to our Beginner&apos;s Guide to Trading. Whether you&apos;re completely new to trading or looking to refresh your knowledge, this guide will help you understand the basics of trading in the financial markets.</p>
+      <main className="px-4">
 
-<main className="p-2">
-
-      <h1 className="text-center font-bold mb-7">Beginner</h1>  
-        
-    <h2 className="text-4xl mb-5 font-semibold ">What is Forex?</h2> 
-    <p className="mb-4">
-    The foreign exchange market , also known as forex or the FX market , is the world&apos;s most traded market, with turnover of $5 trillion per day. To put this into perspective, the U.S. stock market trades around $257 billion a day; quite a large sum, but only a fraction of what forex trades. Forex is traded 24 hours a day, 5 days a week across by banks, institutions and individual traders worldwide. Unlike other financial markets, there is no centralized marketplace for forex, currencies trade over the counter in whatever market is open at that time.</p>       
-        
-        
-
-        <h2 className="font-semibold text-2xl mb-1">How Forex Trading Works</h2>
-
-        <p className="mb-4">
-        Trading forex involves the buying of one currency and simultaneous selling of another.
-In forex, traders attempt to profit by buying and selling currencies by actively speculating on the direction currencies are likely to take in the future.
-        </p>
-        
-
-
-        <h3 className="mb-1 text-2xl font-semibold">Where can I Trade Forex</h3>
-        <p className="mb-4">You can trade forex 24 hours a day, five days a week. The foreign exchange markets are worldwide and therefore follow a 24-hour global timetable.</p>
-
-        <p className="mb-4">The trading week for forex begins on Monday morning in Sydney, Australia and follows the sun westward as the world’s major capital markets open and close from Tokyo to London and finally closing on Friday evening in New York.</p>
-</main>
+      <h2 className="font-semibold mt-4 mb-1 text-lg">What is Trading?</h2>
+      <p>Trading involves buying and selling financial instruments such as stocks, currencies, commodities, and indices with the aim of making a profit. Traders speculate on the price movements of these instruments, trying to buy low and sell high.</p>
+      
+      <h2 className="mt-3 font-semibold text-lg mb-2">Key Concepts</h2>
+      <ul>
+        <li className="mb-2"><strong>Market</strong>: The place where trading occurs, either physical or virtual.</li>
+        <li className="mb-2"><strong>Asset</strong>: The financial instrument being traded, such as stocks, currencies, or commodities.</li>
+        <li className="mb-2"><strong>Broker</strong>: A company or individual that facilitates trading by executing buy and sell orders on behalf of traders.</li>
+        <li className="mb-2"><strong>Leverage</strong>: The use of borrowed funds to increase the potential return of an investment.</li>
+        <li className="mb-2"><strong>Margin</strong>: The amount of money required to open or maintain a trading position.</li>
+        <li className="mb-2"><strong>Volatility</strong>: The degree of variation of a trading price series over time.</li>
+      </ul>
+      
+      <h2 className="mt-4 mb-2 text-xl font-semibold">Getting Started</h2>
+      <p>Before you start trading, it&apos;s important to educate yourself about the markets and develop a trading plan. Here are some steps to get you started:</p>
+      <ol>
+        <li className="mb-2"><strong>Educate Yourself: </strong>Learn about the financial markets, different trading strategies, and risk management.</li>
+        <li className="mb-2"><strong>Choose a Broker: </strong>Select a reputable broker that offers the instruments you want to trade and suits your trading style.</li>
+        <li className="mb-2"><strong>Open an Account: </strong>Follow the broker&apos;s instructions to open a trading account.</li>
+        <li className="mb-2"><strong>Deposit Funds: </strong>Fund your trading account with the amount you&apos;re comfortable trading with.</li>
+        <li className="mb-2"><strong>Start Trading: </strong>Execute your first trade based on your trading plan.</li>
+      </ol>
+      
+      
+      </main>
+   
+   
+    </div>
+ 
 
         
         
