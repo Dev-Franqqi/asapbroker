@@ -118,9 +118,11 @@ const handleclick = ()=>{
 
         <div className={darkMode?'h-screen pb-2 dark bg-black':'h-screen pb-2'}>
         <nav className="p-3 flex justify-between">
-        <svg xmlns="http://www.w3.org/2000/svg" onClick={gotoHome} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-[#8670FC]">
+        <Link href='/' className=''>
+        <svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-[#8670FC]">
   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
 </svg>
+</Link>
 
 
         </nav>

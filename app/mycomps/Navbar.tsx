@@ -227,7 +227,7 @@ export default function Navbar(){
 
     return(
         <>
-        <nav className="px-3 md:px-1 py-2 flex justify-between">
+        <nav className="px-3 md:px-1 py-2 shadow-md md:shadow-none sticky top-0 bg-[#FEFEFE] flex justify-between">
             <div className="flex gap-x-3 w-2/3 mt-3 ">
             <div className="z-[70]">
             
@@ -336,8 +336,8 @@ export default function Navbar(){
 
 
 
-            <div className="flex space-x-2">
-                <Link href="/signup" className="text-black border dark:bg-[#8670FC] hover:bg-[#010102] hover:text-white border-[#8670FC] text-center hidden md:block">Sign up</Link>
+            <div className="flex w-full space-x-6 justify-center">
+                <Link href="/signup" className="text-black mt-1 underline font-semibold hover:bg-[#010102] hover:text-white  text-center hidden md:block">Sign up</Link>
                <Link className="font-semibold underline mt-1" href="/login">Log in</Link>
                 
            

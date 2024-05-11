@@ -22,6 +22,12 @@ export default function Howisitdone(){
         <p>Welcome to Elite Trading Hub&apos;s guide on how CFD trading is done. In this comprehensive overview, we&apos;ll walk you through the steps involved in CFD trading and how you can start trading CFDs on our platform.</p>
     </section>
 
+    <section>A contract for differences (CFD) is a contract between a buyer and a seller that stipulates that the buyer must pay the seller the difference between the current value of an asset and its value at contract time.
+
+CFDs allow traders and investors an opportunity to profit from price movement without owning the underlying assets. The value of a CFD does not consider the asset&apos; underlying value, only the price change between the trade entry and exit.
+
+This is accomplished through a contract between client and broker and does not utilize any stock, forex, commodity, or futures exchange. Trading CFDs offers several major advantages that have increased the instruments’ enormous popularity in the past decade.</section>
+
     <section className="mb-3">
         <h2 className="text-lg font-bold mb-2">1. Select an Asset</h2>
         <p>Choose from a wide range of assets, including stocks, commodities, indices, and currencies, to trade as CFDs.</p>
