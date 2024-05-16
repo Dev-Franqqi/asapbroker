@@ -6,7 +6,7 @@ import Navbar from "@/app/mycomps/Navbar"
 import Cookies from "js-cookie"
 import Elitelogo from "../../../public/elitlogo.png"
 import Image from "next/image"
-
+import '../market.css'
 import Gold from "../../../public/gold.jpg"
 import Silver from "../../../public/silver.jpg"
 import Crudeoilb from "../../../public/crudeoilb.jpg"
@@ -26,10 +26,76 @@ export default function Commodities(){
 
       
                 <main className="px-5 py-5">
+                    <h1>COMMODITIES</h1>
+                    <section>
+                        <h2>DEFINITION</h2>
+                        <p>A commodity is a basic good used in commerce that is interchangeable with other commodities of the same type. It is an economic good, such as a product of agriculture or mining, and is a mass-produced unspecialized product. Commodities are typically raw materials or primary agricultural products that are traded on exchanges. Examples of commodities include gold, oil, wheat, and coffee.</p>
+                    </section>
+                    <section>
+                        <h3>EXAMPLE OF COMMODITIES</h3>
+                        <ul>
+    <li>Agricultural commodities like grain and corn</li>
+    <li>Oil and natural gas</li>
+    <li>Metals like tin and aluminum</li>
+    <li>Precious metals</li>
+    <li>Raw materials</li>
+    <li>Beverages</li>
+    <li>Fertilizer</li>
+</ul>
+
+                    </section>
+                    <section>
+
+                    <h2> INFLUENCERS ON THE COMMODITY MARKET </h2>
+                    <p>Commodity markets are dynamic and influenced by various factors, including supply and demand, geopolitical events, and macroeconomic trends. Here are some key points about commodity markets:</p>
+                    <ol>
+                        <li><h4>Price Determination: </h4>Commodity prices are primarily determined by supply and demand dynamics. When supply is high and demand is low, prices tend to fall, and vice versa. However, other factors such as geopolitical events, weather conditions, and government policies can also impact prices.</li>
+                        <li>
+                            <h4>Impact of COVID-19: </h4>The COVID-19 pandemic has had a significant impact on commodity markets. Lockdowns and restrictions on movement led to disruptions in supply chains, affecting both production and demand for commodities. As economies recover, commodity markets are gradually adjusting to the new normal.
+                        </li>
+                        <li>
+                            <h4>War in Ukraine: </h4>The war in Ukraine has added to the uncertainty in commodity markets. Ukraine is a major producer of grains, and the conflict has raised concerns about disruptions to the global supply of agricultural commodities. This has contributed to volatility in commodity pric
+                        </li>
+                        <li>
+                            <h4>
+                                Climate Change: 
+                            </h4>
+                            Climate change is also reshaping commodity markets. Extreme weather events, such as hurricanes, droughts, and wildfires, can have a significant impact on agricultural commodities. Additionally, increasing awareness of climate change has led to greater demand for sustainable commodities, such as renewable energy sources.
+
+
+
+                        </li>
+                        <li><h4>Inflation and Commodity Prices: </h4>Commodity prices play a crucial role in determining overall inflation. Changes in commodity prices, especially for key commodities like oil and food, can have a direct impact on consumer prices. As commodity prices stabilize, they are expected to have a more moderate impact on inflation.</li>
+                    </ol>
+                    </section>
+
+                    <section>
+                        <h2>COMMODITY TRADING</h2>
+                        <p>
+                        Commodity trading involves the buying and selling of physical commodities or their derivatives, such as futures and options contracts. Here are some key points about commodity trading:
+                        </p>
+                        <ul>
+                            <li><h4>Cash Market: </h4>In the cash market, commodities are bought and sold for immediate delivery. This type of trading is done directly between buyers and sellers and involves the physical exchange of the commodity.</li>
+                            <li>
+                                <h4>Derivatives Market: </h4>
+                            The modern commodities market relies heavily on derivative securities, such as futures and forward contracts. These contracts allow traders to speculate on the future price of a commodity without actually owning the physical commodity.
+
+
+                            </li>
+                            <li>
+                                <h4>Futures Contracts: </h4>
+                            Futures contracts are agreements to buy or sell a commodity at a predetermined price at a specified date in the future. These contracts are traded on exchanges and are standardized in terms of quantity, quality, and delivery date.
+                            </li>
+                            <li>
+                                <h4>Options Market: </h4>
+                                Options contracts give the holder the right, but not the obligation, to buy or sell a commodity at a predetermined price within a specified period. Options can be used to hedge against price fluctuations or to speculate on future price movements.
+                            </li>
+                        </ul>
+                    </section>
 
                     <Image src={Gold}  alt=""/>
-                    <h1 className="text-2xl my-3 font-semibold">Trade the Basic Commodities of Life
-</h1>
+                    <h2 className="text-2xl my-3 font-semibold">Trade the Basic Commodities of Life
+</h2>
 <section className=" my-4">
     <h2 className="text-2xl font-semibold">Introduction to Commodities Trading</h2>
     <p>Commodities trading involves the buying and selling of raw materials or primary agricultural, energy, or metal products. These commodities are typically standardized and interchangeable with other commodities of the same type.</p>

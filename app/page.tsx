@@ -22,9 +22,9 @@ export default function Home(){
   const {open} = useOpen()
   return(
 
-    <>
+    
   
-    <div className={open?'blur-lg':''}>
+    <div className={open?'blur-lg overflow-hidden':'overflow-hidden'}>
 
     <Switchingcomp />
     <section className="py-12 px-4 ">
@@ -453,6 +453,6 @@ Total Payouts
     
         </div>
     
-    </>
+    
   )
 }

@@ -256,7 +256,6 @@ export default function Howisitdone(){
                             <li>
                                 <h4>Analysis:</h4>This trade was successful because the trader correctly identified the relationship between gold and silver and used it to profit from the price difference. Spread trading strategies can be effective in markets where there is a strong correlation between related instruments.
 
-Conclusion  
                             </li>
                         </ul>
 

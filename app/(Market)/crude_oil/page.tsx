@@ -6,7 +6,7 @@ import Navbar from "@/app/mycomps/Navbar"
 import Cookies from "js-cookie"
 import Elitelogo from "../../../public/elitlogo.png"
 import Image from "next/image"
-
+import '../market.css'
 import Crude_jpeg from "../../../public/crude.jpg"
 import Crude_1 from "../../../public/1.jpg"
 import Crude_2 from "../../../public/2.jpg"
@@ -27,7 +27,49 @@ export default function Crude(){
 
       
         <main className="px-5 py-5">
-                <h1 className="text-2xl font-semibold mb-2">Crude Oil</h1>
+                <h1 className="">CRUDE OIL</h1>
+
+                <section>
+                    <p>Crude oil is a complex mixture of hydrocarbons, which are organic compounds made up of hydrogen and carbon atoms. It also contains small amounts of other elements, including nitrogen, sulfur, and oxygen. The composition of crude oil can vary widely depending on its source, with different crude oils containing different proportions of hydrocarbons and other elements.</p>
+                    <p>Nitrogen is typically found in crude oil in the form of organic compounds called amines. Sulfur is another common impurity in crude oil, often present in the form of hydrogen sulfide (H2S) or sulfur-containing organic compounds. Oxygen can be present in crude oil as well, usually in the form of organic compounds such as alcohols, ketones, and organic acids.</p>
+                    <p>
+                    The presence of nitrogen, sulfur, and oxygen in crude oil can have important implications for its processing and refining. These impurities can contribute to the formation of pollutants such as sulfur dioxide (SO2) and nitrogen oxides (NOx) when crude oil is burned, leading to environmental concerns. Refineries use various processes to remove these impurities and produce refined products such as gasoline, diesel, and jet fuel.
+                    </p>
+                </section>
+                <section>
+                    <h2>CATEGORIZATION</h2>
+                    <p>Crude oils are commonly categorized based on the predominant type of hydrocarbon compound they contain. The three main types are:
+
+</p>
+
+                    <ul>
+                        <li><h4>Paraffinic Crude Oil:</h4> This type of crude oil is rich in paraffin hydrocarbons, which are straight-chain or branched-chain hydrocarbons. Paraffinic crude oils are typically low in sulfur and are known for their light color and low density. They are often used to produce high-quality gasoline and diesel fuel. </li>
+                        <li>
+                            <h4>Napthenic Crude Oil: </h4>Naphthenic crude oil contains a high proportion of naphthenic hydrocarbons, which are cyclic hydrocarbons with one or more rings. Naphthenic crude oils are typically darker in color and higher in density compared to paraffinic crude oils. They are often used to produce lubricating oils and bitumen.
+                        </li>
+                        <li>
+                            <h4>Aromatic Crude Oil: </h4>Aromatic crude oil contains a high proportion of aromatic hydrocarbons, which are hydrocarbons containing one or more benzene rings. Aromatic crude oils are typically dark in color and have a high density. They are often used to produce petrochemicals, such as benzene, toluene, and xylene.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>APPEARANCE</h2>
+                    <p>Crude oil&apos;s appearance can vary widely, ranging from colorless to black, depending on its composition and impurities. The color of crude oil is influenced by factors such as its density, sulfur content, and the presence of other compounds.</p>
+                    <ul>
+                        <li>
+                            <h4>Colorless to light Yellow:</h4> Some crude oils are nearly colorless or have a light yellow hue. These oils are typically low in sulfur and have a relatively light density.
+
+
+                        </li>
+                        <li><h4>Brown to Dark Brown:</h4> Many crude oils appear brown or dark brown. This coloration is often due to the presence of organic matter and other impurities in the oil.</li>
+                        <li><h4>Black: </h4>Some crude oils are nearly black in color, often indicating a high concentration of impurities such as sulfur, nitrogen, and heavy metals.</li>
+                    </ul>
+                    <p>
+                    The color of crude oil is important in the refining process, as it can provide clues about the oil&apos;s composition and properties. Refineries use various processes to separate and remove impurities from crude oil, producing refined products such as gasoline, diesel, and jet fuel.
+                    </p>
+                </section>
+                <section>
+            <h2>CRUDE OIL AS A TRADING INSTRUMENT</h2>
                 <Image className="rounded-md" src={Crude_jpeg} alt="Crude Oil" />
                 <p className="mt-2">
                     Crude Oil is a trading instrument that offers a guaranteed return for a correct prediction about an asset&expo;s price direction within a selected timeframe. An in-the-money option offers up to 30% of profit every 30 days, while an unsuccessful one will result in the loss of the investment. With Crude Oil one can speculate on the price movements of various stocks, currency pairs, indices, commodities and even Cryptocurrencies.
@@ -53,7 +95,7 @@ export default function Crude(){
                 </section>
                 <section className="my-4">
                     <Image className="mb-3" src={Crude_4} alt=''/>
-                    <p>Limited supply. Oil is an irreplaceable resource. The fact that there is a finite supply is depressing for most people, but it can work to the advantage of investors who choose to invest in its futures. Other commodities futures such as corn and livestock can be replaced and their prices can be stabilized. However, as the world’s oil supply is exhausted, the price of oil will inevitably increase.</p>
+                    <p>Limited supply. Oil is an irreplaceable resource. The fact that there is a finite supply is depressing for most people, but it can work to the advantage of investors who choose to invest in its futures. Other commodities futures such as corn and livestock can be replaced and their prices can be stabilized. However, as the world&apos;s oil supply is exhausted, the price of oil will inevitably increase.</p>
                 </section>
                 <section className="my-4">
                     <Image className="mb-3" src={Crude_6} alt=''/>
@@ -74,6 +116,7 @@ export default function Crude(){
         <li className="mb-3"><strong>Range Trading:</strong> Traders identify a price range within which crude oil is trading and buy at the bottom of the range and sell at the top.</li>
     </ul>
     <p>It&apos;s essential to backtest and refine your trading strategy before committing real capital to ensure its effectiveness in different market conditions.</p>
+                </section>
 </section>
 
                 <section className="my-4">

@@ -9,6 +9,7 @@ import Image from "next/image"
 
 import Bitcoin from "../../../public/bitcoin.jpg"
 import Link from "next/link";
+import '../market.css'
 export default function Crude(){
   
     
@@ -20,6 +21,7 @@ export default function Crude(){
 
       
                 <main className="px-5 py-5">
+                    <h1>BITCOIN</h1>
                 <section className=" my-4">
     <h2 className="text-2xl font-semibold">Introduction to Bitcoin</h2>
     <p>Bitcoin is a decentralized digital currency that was invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto. It was released as open-source software in 2009, and since then, it has become the first and most well-known cryptocurrency in the world.</p>
@@ -28,8 +30,43 @@ export default function Crude(){
     <p>Bitcoin transactions are pseudonymous, meaning that while transactions are recorded on the blockchain, the identities of the parties involved are not directly revealed. This has led to Bitcoin being used for various purposes, including online payments, remittances, and as an investment asset.</p>
     <p>Overall, Bitcoin has revolutionized the way we think about money and finance. Its decentralized nature, limited supply, and borderless nature have made it a popular choice for those seeking financial freedom and a hedge against traditional financial systems.</p>
 </section>
+<section>
+    <h2>BITCOIN OVERVIEW</h2>
+    <p>
+    Bitcoin is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries. Transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain.
+    </p>
+    <p>Bitcoins are created as a reward for a process known as mining. They can be exchanged for other currencies, products, and services. Bitcoin has been criticized for its use in illegal transactions, its high electricity consumption, price volatility, and thefts from exchanges. Some economists, including several Nobel laureates, have characterized it as a speculative bubble.</p>
+    
+</section>
+<section>
+    <h2>BITCOIN FEATURES</h2>
+    
+   
+<ul className=" ">
+    <li>
+<h4>Fast peer-to-peer transactions:</h4>  Bitcoin transactions are processed quickly compared to traditional banking systems. Transactions are usually confirmed within minutes, especially when a small fee is attached to the transaction.
 
-                    <h1 className="text-2xl font-semibold">Bitcoin Spreads: A Better Way</h1>
+    </li>
+<li><h4>Worldwide payments: </h4>Bitcoin transactions can be sent or received from anywhere in the world, as long as both parties have internet access. This makes it an ideal payment method for international transactions, as there are no currency conversion fees or delays associated with traditional banking systems.</li>
+<li><h4>Low processing fees:</h4> Bitcoin transactions typically have lower processing fees compared to traditional payment methods, especially for international transactions. This is because Bitcoin transactions do not require intermediaries such as banks or payment processors, which often charge high fees.</li>
+</ul> 
+
+</section>
+<section>
+    <h2>BITCOIN USAGE</h2>
+    <p>
+    Bitcoin&apos;s primary uses are as a store of value and an investment. Many people buy and hold Bitcoin as a long-term investment, believing that its value will increase over time. Bitcoin&apos;s limited supply and decentralized nature make it appealing to those seeking an alternative to traditional fiat currencies.
+
+
+    </p>
+    <p>
+    Bitcoin is also used as a medium of exchange, allowing users to send and receive payments quickly and securely. However, its use as a medium of exchange is less common than its use as a store of value or investment. This is due in part to Bitcoin&apos;s price volatility, which can make it impractical for everyday transactions.
+    </p>
+    <p>
+    Bitcoin is pseudonymous, meaning that transactions are recorded on a public ledger, but the identities of the parties involved are not directly linked to their Bitcoin addresses. While this provides a level of privacy, it has also attracted the attention of regulators concerned about its potential use in illegal activities such as money laundering and terrorism financing.
+    </p>
+</section>
+                    <h2 className="text-2xl font-semibold">Bitcoin Spreads: A Better Way</h2>
                 
                     <p className="mt-4">
                     Our Bitcoin Spreads let you trade the price of Bitcoin (based on the trusted TeraBit IndexSM) without having to own bitcoins. There&apos;s no need for wallets or conversion, since the contracts are settled in US dollars.

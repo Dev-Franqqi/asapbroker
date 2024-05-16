@@ -1,0 +1,38 @@
+
+h1{
+    @apply font-bold text-4xl mb-4 mt-5 text-center
+
+}
+h2{
+    @apply mb-3 text-2xl mt-2 font-semibold
+}
+h3{
+    
+    @apply mb-2 text-lg mt-1 font-medium
+
+}
+h4{
+    
+    @apply mb-2 text-base mt-1 font-medium
+
+}
+section{
+    @apply mt-6 py-4
+}
+
+
+p{
+    @apply mb-2
+}
+
+li{
+    @apply mb-2 ;
+}
+
+.quote{ 
+
+    @apply italic text-sm border-b border-t border-t-slate-300 border-b-slate-300
+}
+ol{
+    @apply list-decimal p-2
+}

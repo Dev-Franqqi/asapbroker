@@ -8,7 +8,7 @@ type Props={
 export default function Wrapblur({children}:Props){
         const {open} = useOpen()
     return(
-        <div className={open?'blur-lg':''}>
+        <div className={open?'blur-xl':''}>
         {children}
         </div>
     )

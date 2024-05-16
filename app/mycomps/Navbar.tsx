@@ -184,6 +184,7 @@ export default function Navbar(){
    ]
     const toggleMenu = () => {
       setOpen((prevopen) => !prevopen);
+      
     };
     
     
@@ -227,7 +228,7 @@ export default function Navbar(){
 
     return(
         <>
-        <nav className="px-3 md:px-1 py-2 shadow-md md:shadow-none sticky top-0 bg-[#FEFEFE] flex justify-between">
+        <nav className="px-3 md:px-1 py-2 shadow-md md:shadow-none z-50 sticky top-0 bg-[#FEFEFE] flex justify-between">
             <div className="flex gap-x-3 w-2/3 mt-3 ">
             <div className="z-[70]">
             
@@ -238,7 +239,7 @@ export default function Navbar(){
         animate={{ opacity: open ? 0 : 1, rotate: open ? 180 : 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
       >
-        {open ? <IoClose size={30} className="md:hidden mt-1  text-3xl text-blue-950 dark:text-white" /> : <HiOutlineMenuAlt4 className="md:hidden mt-1  text-3xl text-black dark:text-white" size={30} />}
+        {open ? <IoClose size={30} className="md:hidden mt-1 text-3xl text-blue-950 dark:text-white" /> : <HiOutlineMenuAlt4 className="md:hidden mt-1  text-3xl text-black dark:text-white" size={30} />}
       </motion.div>
       {open && (
         <motion.div
@@ -358,7 +359,7 @@ export default function Navbar(){
     initial='initial'
     animate='animate'
     variants={mobileNavVariants}
-    className="w-[100vw] pt-20 h-[90vh] overflow-hidden md:hidden absolute     dark:bg-transparent dark:border-0 z-[60]"
+    className="w-[100vw] pt-20 h-[90vh]  overflow-hidden md:hidden fixed    dark:bg-transparent dark:border-0 z-[60]"
   >
     {/* <ul className="text-xl text-center pt-10 mt-10 font-semibold text-gray-800 dark:text-white  flex flex-col space-y-10" >
         <li className="hover:text-underline hover:text-[#8670FC]"><Link href="/about">About</Link></li>
@@ -435,8 +436,10 @@ export default function Navbar(){
                     </AccordionItem>
   </Accordion>
     </div>
+      <Link href='/signup'>
 
     <Button className="bg-[#8670FC] block mt-10 text-white mx-auto w-[90%]">Sign Up</Button>
+      </Link>
     {/* <div className="relative">
 
     </div>
