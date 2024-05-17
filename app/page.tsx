@@ -18,13 +18,14 @@ import Profit3 from '../public/in-profit-icon-3.svg'
 import Profit4 from '../public/in-profit-icon-4.svg'
 import Profit5 from '../public/in-profit-icon-5.svg'
 import useOpen from "./mycomps/hooks/useOpen";
+
 export default function Home(){
   const {open} = useOpen()
   return(
 
     
   
-    <div className={open?'blur-lg overflow-hidden':'overflow-hidden'}>
+    <div className={open?'blur-lg overflow-hidden':''}>
 
     <Switchingcomp />
     <section className="py-12 px-4 ">

@@ -58,7 +58,7 @@ function Component2() {
             exit={{ x: '-100%' }}
             transition={{ duration: 0.5 }}
         >
-            <Image src={Secondimage} className='mt-5 object-cover h-full' alt='firstimage' />
+            <Image src={Secondimage} priority={true}  className='mt-5 object-cover h-full' alt='firstimage' />
             <div className='p-6 left-4 absolute top-3 w-[80%]'>
                 <h1 className='text-4xl text-blue-950   font-semibold'>Trade Stocks and Crypto seamlessly</h1>
                 <Button className='bg-main font-semibold p-6 text-white mt-10'>Open account</Button>

@@ -436,10 +436,10 @@ export default function Navbar(){
                     </AccordionItem>
   </Accordion>
     </div>
-      <Link href='/signup'>
+    <Link href='/signup'>
 
     <Button className="bg-[#8670FC] block mt-10 text-white mx-auto w-[90%]">Sign Up</Button>
-      </Link>
+    </Link>
     {/* <div className="relative">
 
     </div>
