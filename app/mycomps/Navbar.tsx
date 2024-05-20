@@ -22,6 +22,8 @@
 // }
 
 "use client"
+import { useEffect } from 'react';
+
 import Image from "next/image"
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -228,7 +230,8 @@ export default function Navbar(){
 
     return(
         <>
-        <nav className="px-3 md:px-1 py-2 shadow-md md:shadow-none z-50 sticky top-0 bg-[#FEFEFE] flex justify-between">
+        <TradingViewWidget />
+        <nav className="px-3 mt-2 md:px-1 py-2 shadow-md md:shadow-none z-50 sticky top-0 bg-[#FEFEFE] flex justify-between">
             <div className="flex gap-x-3 w-2/3 mt-3 ">
             <div className="z-[70]">
             
@@ -484,3 +487,43 @@ export default function Navbar(){
             </>
     )
 }
+
+
+
+
+const TradingViewWidget = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js';
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      symbols: [
+        { proName: "FOREXCOM:SPXUSD", title: "S&P 500 Index" },
+        { proName: "FOREXCOM:NSXUSD", title: "US 100 Cash CFD" },
+        { proName: "FX_IDC:EURUSD", title: "EUR to USD" },
+        { proName: "BITSTAMP:BTCUSD", title: "Bitcoin" },
+        { proName: "BITSTAMP:ETHUSD", title: "Ethereum" },
+      ],
+      showSymbolLogo: true,
+      isTransparent: false,
+      displayMode: "adaptive",
+      colorTheme: "light",
+      locale: "en"
+    });
+    
+    document.getElementById('tradingview-widget-container')!.appendChild(script);
+  }, []);
+
+  return (
+    <div className="tradingview-widget-container" id="tradingview-widget-container">
+      <div className="tradingview-widget-container__widget"></div>
+      <div className="tradingview-widget-copyright">
+        <a href="https://www.elitetradinghub.co/" rel="noopener nofollow" target="_blank">
+          <span className="blue-text">Track all markets on Elite Trading Hub</span>
+        </a>
+      </div>
+    </div>
+  );
+};
+
+
