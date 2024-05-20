@@ -33,17 +33,24 @@ function Component1() {
     return (
         <motion.div
             key={1}
-            className='h-[20rem] overflow-x-hidden'
+            className='h-[20rem] md:h-[25rem] md:flex md:justify-between md:relative  overflow-x-hidden'
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ duration: 0.3 }}
         >
-            <Image src={Firstimage} className='mt-5 object-cover h-full' alt='firstimage' />
-            <div className='p-6 left-4 absolute top-3 w-[80%]'>
-                <h1 className='text-4xl text-gray-800  font-semibold'>Trade Forex and Commodities with financial thinking</h1>
+            <Image src={Firstimage} className='mt-5 object-cover md:absolute md:right-0 md:scale-150 md:object-none h-full'  alt='firstimage' />
+            <div className='p-6 left-4 absolute md:block top-3 w-[80%] '>
+                <h1 className='text-4xl md:pt-10 md:text-5xl md:w-3/5 text-gray-800  font-semibold'>Trade Forex and Commodities with financial thinking</h1>
+               <p className='hidden md:block md:text-xl md:w-4/5'>Access 40,000+ instruments – across asset classes – to trade, hedge and invest from a single account.</p>
+                
+                <div className='flex gap-x-3'>
+
                 <Button className='bg-main font-semibold text-white mt-10'>Open account</Button>
+                <Button className='border-main border hidden md:block font-semibold text-main mt-10'>Login account</Button>
             </div>
+            </div>
+
         </motion.div>
     );
 }
