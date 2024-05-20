@@ -19,7 +19,7 @@ export default function Switchingcomp() {
     }, []);
 
     return (
-        <div>
+        <div className='overflow-x-hidden'>
 
         <AnimatePresence mode='wait'>
             {activeComponent === 1 ? (

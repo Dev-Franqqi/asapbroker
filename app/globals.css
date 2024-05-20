@@ -68,6 +68,7 @@ body{
 }
 body{
   background-color: #FEFEFE;
+  @apply overflow-x-hidden
 }
 main{
   @apply bg-white

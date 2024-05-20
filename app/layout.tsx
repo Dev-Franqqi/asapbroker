@@ -22,7 +22,7 @@ export default function RootLayout({
       
       {/* <script src="//code.tidio.co/2p8xztwcpzlaiirgh0ujroghjx24uba7.js" async></script>      */}
       {/* <script src="//code.tidio.co/cnxwxi4dj6anrldkxsxiqpoqtiiouj8m.js" async></script> */}
-      <body className={inter.className }>
+      <body className={inter.className + ' overflow-x-hidden'}>
         <Opencontextprovider>
           <Navbar />
           
