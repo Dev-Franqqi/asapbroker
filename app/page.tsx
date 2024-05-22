@@ -20,6 +20,7 @@ import Profit4 from '../public/in-profit-icon-4.svg'
 import Profit5 from '../public/in-profit-icon-5.svg'
 import useOpen from "./mycomps/hooks/useOpen";
 import Tradingviewticker from "./mycomps/Tradingviewticker";
+import GoogleTranslate from "./mycomps/GoogleTranslate";
 export default function Home(){
   const {open} = useOpen()
   const router = useRouter()
@@ -30,6 +31,7 @@ export default function Home(){
     <div className={open?'blur-lg overflow-hidden':''}>
 
     <Switchingcomp />
+    <GoogleTranslate />
     <section className="py-12 px-4 md:bg-gray-200 md:flex md:items-center md:mt-4 ">
       <div className="md:ml-6 ">
 
