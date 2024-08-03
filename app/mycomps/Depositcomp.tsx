@@ -94,10 +94,11 @@ export default function Depositcomp(){
 
         {walletDetails && (
             <div className="border dark:border-gray-600 text-sm p-5 rounded-md mt-4">
-                <h2 className="text-sm font-semibold mb-2 ">Pay from {coin} wallet</h2>
-                <p className="mb-1">You can deposit by sending {coin} to this Address:{walletDetails}</p>
-                <p>After sending it, upload proof of payment below.</p>
-                <CopyTextButton coin={coin}  textToCopy={walletDetails} />
+                {/* <h2 className="text-sm font-semibold mb-2 ">Pay from {coin} wallet</h2> */}
+                <h2 className="text-sm font-semibold mb-2 text-red-500 ">Option not available at this time.</h2>
+                {/* <p className="mb-1">You can deposit by sending {coin} to this Address:{walletDetails}</p> */}
+                {/* <p>After sending it, upload proof of payment below.</p> */}
+                {/* <CopyTextButton coin={coin}  textToCopy={walletDetails} /> */}
             </div>
         )}
         </div>
