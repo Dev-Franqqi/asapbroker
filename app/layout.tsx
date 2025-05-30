@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 import Footer from "./mycomps/Footer";
 import Link from "next/link";
 import Whatsapp from '../public/pngwing.com.png'
+import UserContextProvider from "./mycomps/contexts/Usercontext";
 import Image from "next/image";
 export const metadata: Metadata = {
   title: "Elite Trading Hub", 
@@ -27,12 +28,14 @@ export default function RootLayout({
       {/* <script src="//code.tidio.co/cnxwxi4dj6anrldkxsxiqpoqtiiouj8m.js" async></script> */}
       <body className={inter.className + ' overflow-x-hidden'}>
         <Opencontextprovider>
+          <UserContextProvider>
           <Navbar />
           
         <Wrapblur>
         {children}
           <Footer />
         </Wrapblur>
+          </UserContextProvider>
         
 
         </Opencontextprovider>

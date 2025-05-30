@@ -38,6 +38,8 @@ export default function Login(){
     // const [error,setError] = useState(false)
     const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
       e.preventDefault();
+      setError(false)
+      setErrmessage('')
       setLoading(true)
       if(email !== '' && password !==''){
         signInWithEmailAndPassword(auth,email,password)

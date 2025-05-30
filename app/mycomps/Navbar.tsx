@@ -51,7 +51,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
+import { usePathname } from 'next/navigation';
 const poppins = Poppins({ weight:"700" ,subsets: ["latin"] });
 import Cookies from "js-cookie";
 import { IoClose } from "react-icons/io5";
@@ -59,7 +59,7 @@ import { IoClose } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 
 export default function Navbar(){
-
+    const pathname= usePathname()
     const {open,setOpen} = useOpen()
     const router = useRouter()
     
@@ -229,7 +229,8 @@ export default function Navbar(){
     
 
     return(
-        <>
+        <div className={pathname.startsWith('/dashboard') ? 'hidden' : 'block'}>
+
         <TradingViewWidget />
         <nav className="px-3 mt-2 md:px-1 py-2 shadow-md md:shadow-none z-50 sticky top-0 bg-[#FEFEFE] flex justify-between">
             <div className="flex gap-x-3 w-2/3 mt-3 ">
@@ -484,7 +485,7 @@ export default function Navbar(){
   </motion.aside>
 )}
 
-            </>
+            </div>
     )
 }
 

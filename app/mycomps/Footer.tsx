@@ -1,7 +1,10 @@
+'use client'
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 export default function Footer(){
+  const pathname = usePathname()
     return(
-        <footer className="bg-[#463A5C] md:flex md:gap-x-20 py-10 px-3">
+        <footer className={pathname.startsWith('/dashboard')?"hidden":"bg-[#463A5C] md:flex md:gap-x-20 py-10 px-3"}>
           <div className="md:w-2/5">
 
         <h5 className="text-white font-bold text-2xl mb-4 md:mb-8">
