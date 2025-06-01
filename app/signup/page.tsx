@@ -152,6 +152,7 @@ const handleclick = ()=>{
       <SelectContent className="bg-neutral-700 text-white">
         <SelectItem  value="crude oil">Crude Oil</SelectItem>
         <SelectItem  value="cryptocurrencies">Crypto Currencies</SelectItem>
+        <SelectItem  value="cryptocurrencies">Ethereum</SelectItem>
         <SelectItem  value="stocks">Stocks</SelectItem>
         <SelectItem  value="forex">Forex</SelectItem>
         <SelectItem  value="cryptocurrency mining">Cryptocurrency Mining</SelectItem>
