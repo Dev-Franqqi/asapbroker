@@ -32,9 +32,9 @@ export default function DepositPage() {
 
   // Hardcoded wallet addresses (replace with dynamic/secure addresses in production)
   const walletAddresses: Record<string, string> = {
-    btc: 'bc1qgy3erss0hh3v9mttlt86y3gtm7dmnyu0cfaa3y',
-    eth: '0xbC942961e8dA31E3C7975B1ce6DD90A441756723',
-    usdt: 'TAqzp47KzG98HM3RMkytq9hrx4WXjywpZe',
+    btc: 'bc1q7fjzx2kjya4zvwmkuv43er4rn3a20sllwjcp40',
+    eth: '0xe06fd676414e98b6c3d2debd0b5bae0a7abd74ec',
+    usdt: 'TFBampjZFHahKTgUiXnvjkr7Lw9hpUrrqp',
   };
 
   useEffect(() => {
